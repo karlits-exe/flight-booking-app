@@ -92,21 +92,88 @@
      - If the email is already registered, the system notifies the user.
      - If input validation fails, the system prompts the user to correct errors.
 
+- **Use Case 3**
+  - **Title:** User Login
+  - **Description:** Allows registered users to access their accounts.
+  - **Actors:** Registered User
+  - **Preconditions:** User has a registered account.
+  - **Postconditions:** User is logged in and can access the app features.
+  - **Main Flow:**
+     1. User navigates to the login page.
+     2. User enters email and password.
+     3. System validates credentials.
+     4. System grants access to the user dashboard.
+  - **Alternate Flows:**
+     - If credentials are incorrect, the system displays an error message.
+   
+- **Use Case 3**
+  - **Title:** Flight Booking Simulation
+  - **Description:** Allows registered users to simulate booking a flight.
+  - **Actors:** Registered User
+  - **Preconditions:** User has selected a flight.
+  - **Postconditions:** Booking is saved in the system and confirmation is displayed.
+  - **Main Flow:**
+     1. User selects a flight from search results.
+     2. User confirms booking details.
+     3. System stores booking and displays confirmation.
+  - **Alternate Flows:**
+     - User cancels booking before confirmation; system discards the transaction.
+
 ### System Features
-- **Feature 1:**
-  - **Description:** 
-  - **Priority:** 
-  - **Inputs:** 
-  - **Processing:** 
-  - **Outputs:** 
-  - **Error Handling:** 
+- **Feature 1**
+  - **Description:** Flight Search
+  - **Priority:** High
+  - **Inputs:** Departure, destination, travel dates, number of passengers.
+  - **Processing:** System queries the flight database and filters results based on inputs.
+  - **Outputs:** List of flights matching search criteria, showing airline, time, duration, and price.
+  - **Error Handling:** Display a message if no flights match the search criteria.
+ 
+- **Feature 2**
+  - **Description:** User Account Management
+  - **Priority:** High
+  - **Inputs:** User email, password, and personal details.
+  - **Processing:** Validate inputs, create/update account, and store data securely.
+  - **Outputs:** Confirmation of registration, login, or profile update.
+  - **Error Handling:** Display validation errors for incorrect inputs or duplicate email.
+ 
+- **Feature 3**
+  - **Description:** Flight Booking Simulation
+  - **Priority:** Medium
+  - **Inputs:** Selected flight details and user confirmation.
+  - **Processing:** Store booking data in the system.
+  - **Outputs:** Booking confirmation page with flight summary.
+  - **Error Handling:** Display a message if the booking process fails or the user cancels.
+ 
+- **Feature 4**
+  - **Description:** Booking History
+  - **Priority:** Medium
+  - **Inputs:** User login credentials.
+  - **Processing:** Retrieve all bookings associated with the user.
+  - **Outputs:** List of past and active bookings with details.
+  - **Error Handling:** Display a message if no bookings exist.
 
 ## 8. Non-Functional Requirements
-- **Performance:** Describe performance requirements.
-- **Security:** Outline security needs.
-- **Usability:** Detail user interface and experience considerations.
-- **Reliability:** Define reliability and availability requirements.
-- **Supportability:** Specify maintenance and support requirements.
+**Performance**
+- The system should respond to flight search queries within 2 seconds under normal load (up to 100 concurrent users).
+- Booking simulations and account management actions should complete within 3 seconds.
+- The application should handle at least 500 simultaneous users without degradation in performance.
+
+**Security**
+- User passwords must be stored securely using hashed and salted encryption.
+- All sensitive operations (login, registration, profile updates) must be transmitted over HTTPS.
+- The system must prevent common security vulnerabilities such as SQL injection, XSS, and CSRF.
+- Only authenticated users can access booking history and simulate bookings.
+
+**Usability**
+- The interface must be intuitive, with clearly labelled forms and buttons.
+- Flight search, booking simulation, and account management should require no more than 3 clicks to complete primary tasks.
+- The system must provide real-time feedback for errors or invalid inputs.
+- The design should be responsive, compatible with desktop, tablet, and mobile devices.
+
+**Reliability**
+- The system must have an uptime of 99% during operational hours.
+- All data entries (user accounts, simulated bookings) must be persistently stored and recoverable in case of system failure.
+- The system should include basic logging for actions such as registration, login, and bookings to support troubleshooting.
 
 ## 9. Data Requirements
 - **Data Models:** Include simple diagrams if possible.
