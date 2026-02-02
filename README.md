@@ -25,15 +25,23 @@
 - **References**: Singapore Airlines
 
 ## 4. Overall Description
-- **Product Perspective**: The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
-- **Product Functions**: The primary functionalities of the application include:
+- **Product Perspective:** The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
+- **Product Functions:** The primary functionalities of the application include:
    - **Flight Search:** Users can search for flights based on departure and destination locations, dates, and passenger count.
    - **User Account Management:** Users can register, log in, and manage their personal profiles.
    - **Flight Booking:** Users can select flights, choose seating preferences, and complete bookings.
-   - **Booking History:** Users can view past bookings, cancellations, and generate receipts.
-- **User Classes and Characteristics**: Describe the different types of users.
-- **Operating Environment**: Specify the hardware, software, and network environment.
-- **Assumptions and Dependencies**: List any assumptions made and dependencies on other projects or technologies.
+   - **Booking History:** Users can view past bookings and cancellations.
+- **User Classes and Characteristics:**
+   - **Guest Users:** Users who can browse flights but must register or log in to complete a booking.
+   - **Registered Users:** Individuals who create an account to book flights and manage bookings. They require a secure login and access to personal booking history.
+   - **Administrators:** System administrators responsible for maintaining flight data, monitoring bookings, and managing user accounts.
+- **Operating Environment:**
+   - **Hardware:** Smartphones, tablets, and desktop computers.
+   - **Software:** Compatible with modern browsers (Chrome, Firefox, Safari) and mobile OS platforms (iOS, Android).
+   - **Network:** Internet connectivity is required for real-time flight searches, booking confirmation, and payment processing.
+- **Assumptions and Dependencies:**
+   - Users are expected to have an active internet connection and a compatible device.
+   - The system will comply with standard security protocols to protect user data and transactions.
 
 ## 5. Visual Mockup Reference
 - **Link**: [Figma](https://www.figma.com/design/Kq2DVtT49QCoOQa8mrmf2d/Flight-Booking-App-Mockup?node-id=0-1&p=f&t=dWs9CJJO2PM4AHJK-0)
