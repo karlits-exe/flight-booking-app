@@ -3,7 +3,7 @@
 ## 1. Title Page
 - **Project Name:** Flight Booking App
 - **Version:** 
-- **Date:** 1/27/2026
+- **Date:** 02 Feb 2026
 - **Authors:**  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
 - **Trello Board**: https://trello.com/b/2Ww7RvSO/b598-side-project
 
