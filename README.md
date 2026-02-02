@@ -176,7 +176,7 @@
 - The system should include basic logging for actions such as registration, login, and bookings to support troubleshooting.
 
 ## 9. Data Requirements
-- **Data Models:** [ERD](https://drive.google.com/file/d/19wSvv_x4Vpy5k4j2-QEfXtBq_MxQ03r5/view) - The app will manage three primary entities: User, Flight, and Booking.
+- **Data Models:** [ERD](https://trello.com/1/cards/6979d6c08de20b80b38ce884/attachments/6980848b973274456371ecc4/download/ERD.jpg) - The app will manage three primary entities: User, Flight, and Booking.
 - **Database Requirements:**
   - **User Table:** Stores registered user information. Each user has a unique user_id.
   - **Flight Table:** Stores flight details available for booking. Each flight has a unique flight_id.
