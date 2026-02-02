@@ -75,7 +75,22 @@
      2. System retrieves matching flight options.
      3. System displays results with airline, time, duration, and price.
   - **Alternate Flows:**
-   - If no flights are available, the system displays a "no results" message.
+     - If no flights are available, the system displays a "no results" message.
+
+- **Use Case 2**
+  - **Title:** User Registration
+  - **Description:** Allows a new user to create an account to access the app’s booking features.
+  - **Actors:** Guest User
+  - **Preconditions:** User is on the registration page.
+  - **Postconditions:** User account is created and stored in the system.
+  - **Main Flow:**
+     1. User navigates to the registration page.
+     2. User enters required details (name, email, password).
+     3. System validates inputs.
+     4. System stores account details and confirms registration.
+  - **Alternate Flows:**
+     - If the email is already registered, the system notifies the user.
+     - If input validation fails, the system prompts the user to correct errors.
 
 ### System Features
 - **Feature 1:**
