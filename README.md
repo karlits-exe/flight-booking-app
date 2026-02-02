@@ -181,9 +181,6 @@
   - **User Table:** Stores registered user information. Each user has a unique user_id.
   - **Flight Table:** Stores flight details available for booking. Each flight has a unique flight_id.
   - **Booking Table:** Links users to flights for their bookings. Each booking references one user and one flight.
-      - Relationships:
-       - One-to-many relationship between User and Booking (a user can have multiple bookings).
-       - One-to-many relationship between Flight and Booking (a flight can be booked multiple times by different users).
 - **Data Storage and Retrieval:**
   - Data will be stored in a relational database.
   - Queries will include:
@@ -191,7 +188,6 @@
     - Fetching a user’s booking history.
     - Inserting new bookings into the system.
     - Updating or deleting bookings.
-- Indexing will be used on frequently searched fields (departure, destination, user_id) to optimise performance.
 
 ## 10. External Interface Requirements
 - **User Interfaces:** Provide sketches or descriptions of the user interface.
