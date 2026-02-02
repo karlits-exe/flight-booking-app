@@ -5,6 +5,7 @@
 - **Version:** 
 - **Date:** 1/27/2026
 - **Authors:**  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
+- **Trello Board**: https://trello.com/b/2Ww7RvSO/b598-side-project
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -22,7 +23,7 @@
 - **Purpose:** Emulate a flight booking system.
 - **Scope:** Browse local flights. User registration and login are required to book flights.
 - **Definitions, Acronyms, and Abbreviations:** N/A
-- **References:** Singapore Airlines
+- **Reference:** Singapore Airlines
 
 ## 4. Overall Description
 - **Product Perspective:** The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
