@@ -4,7 +4,7 @@
 - **Project Name**: flight-booking-app
 - **Version**: 
 - **Date**: 1/27/2026
-- **Author(s)**:  Karl Dennis, Lord Acuña, Lorenzo Angelo Pira
+- **Author(s)**:  Lord Acuña, Lorenzo Angelo Pira, Karl Rodriguez
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -19,10 +19,10 @@
 10. [Appendices](#12-appendices)
 
 ## 3. Introduction
-- **Purpose**: Explain the purpose of the application.
+- **Purpose**: Emulate a flight booking system.
 - **Scope**: Define what the application will and will not do.
 - **Definitions, Acronyms, and Abbreviations**: List any terms or acronyms used.
-- **References**: List any documents or sources referenced.
+- **References**: Singapore Airlines
 
 ## 4. Overall Description
 - **Product Perspective**: Describe how this application fits into a larger system or context.
