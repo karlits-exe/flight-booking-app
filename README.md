@@ -196,8 +196,6 @@
 - **Software Interfaces:** Note any software interactions.
 
 ## 11. Glossary
-- ## 11. Glossary
-
 **Flight Booking App:** A web and mobile application designed to allow users to browse and simulate booking local flights.  
 
 **Flight Search:** A system feature that enables users to find available flights based on departure, destination, travel dates, and passenger count.  
