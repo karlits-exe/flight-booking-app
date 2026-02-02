@@ -1,10 +1,10 @@
 # Technical Specifications Document
 
 ## 1. Title Page
-- **Project Name**: Flight Booking App
-- **Version**: 
-- **Date**: 1/27/2026
-- **Authors**:  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
+- **Project Name:** Flight Booking App
+- **Version:** 
+- **Date:** 1/27/2026
+- **Authors:**  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -19,10 +19,10 @@
 10. [Appendices](#12-appendices)
 
 ## 3. Introduction
-- **Purpose**: Emulate a flight booking system.
-- **Scope**: Browse local flights. User registration and login are required to book flights.
-- **Definitions, Acronyms, and Abbreviations**: N/A
-- **References**: Singapore Airlines
+- **Purpose:** Emulate a flight booking system.
+- **Scope:** Browse local flights. User registration and login are required to book flights.
+- **Definitions, Acronyms, and Abbreviations:** N/A
+- **References:** Singapore Airlines
 
 ## 4. Overall Description
 - **Product Perspective:** The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
@@ -44,14 +44,9 @@
    - The system will comply with standard security protocols to protect user data and transactions.
 
 ## 5. Visual Mockup Reference
-- **Link**: [Figma](https://www.figma.com/design/Kq2DVtT49QCoOQa8mrmf2d/Flight-Booking-App-Mockup?node-id=0-1&p=f&t=dWs9CJJO2PM4AHJK-0)
+- **Link:** [Figma](https://www.figma.com/design/Kq2DVtT49QCoOQa8mrmf2d/Flight-Booking-App-Mockup?node-id=0-1&p=f&t=dWs9CJJO2PM4AHJK-0)
 
 ## 6. Features
-- **Feature 1**: Description
-- **Feature 2**: Description
-- **Feature 3**: Description
-- (Add more features as necessary)
-
 - **Feature 1: Flight Search**
    - Users can search for local flights by specifying departure and destination locations, travel dates, and the number of passengers. Search results are displayed with flight details such as airline, departure/arrival times, duration, and price.
 
@@ -69,46 +64,50 @@
 
 ## 7. Functional Requirements
 ### Use Cases
-- **Use Case 1**:
-  - **Title**: 
-  - **Description**: 
-  - **Actors**: 
-  - **Preconditions**: 
-  - **Postconditions**: 
-  - **Main Flow**: 
-  - **Alternate Flows**: 
+- **Use Case 1**
+  - **Title:** Flight Search
+  - **Description:** Allows users to search for available local flights.
+  - **Actors:** Registered or Guest User
+  - **Preconditions:** User is logged in or on the search page.
+  - **Postconditions:** System displays a list of matching flights.
+  - **Main Flow:**
+     1. User inputs departure, destination, travel dates, and passenger count.
+     2. System retrieves matching flight options.
+     3. System displays results with airline, time, duration, and price.
+  - **Alternate Flows:**
+   - If no flights are available, the system displays a "no results" message.
 
 ### System Features
-- **Feature 1**:
-  - **Description**: 
-  - **Priority**: 
-  - **Inputs**: 
-  - **Processing**: 
-  - **Outputs**: 
-  - **Error Handling**: 
+- **Feature 1:**
+  - **Description:** 
+  - **Priority:** 
+  - **Inputs:** 
+  - **Processing:** 
+  - **Outputs:** 
+  - **Error Handling:** 
 
 ## 8. Non-Functional Requirements
-- **Performance**: Describe performance requirements.
-- **Security**: Outline security needs.
-- **Usability**: Detail user interface and experience considerations.
-- **Reliability**: Define reliability and availability requirements.
-- **Supportability**: Specify maintenance and support requirements.
+- **Performance:** Describe performance requirements.
+- **Security:** Outline security needs.
+- **Usability:** Detail user interface and experience considerations.
+- **Reliability:** Define reliability and availability requirements.
+- **Supportability:** Specify maintenance and support requirements.
 
 ## 9. Data Requirements
-- **Data Models**: Include simple diagrams if possible.
-- **Database Requirements**: Describe tables and relationships.
-- **Data Storage and Retrieval**: Explain how data will be stored and accessed.
+- **Data Models:** Include simple diagrams if possible.
+- **Database Requirements:** Describe tables and relationships.
+- **Data Storage and Retrieval:** Explain how data will be stored and accessed.
 
 ## 10. External Interface Requirements
-- **User Interfaces**: Provide sketches or descriptions of the user interface.
-- **API Interfaces**: Briefly describe any APIs.
-- **Hardware Interfaces**: Mention any required hardware interactions.
-- **Software Interfaces**: Note any software interactions.
+- **User Interfaces:** Provide sketches or descriptions of the user interface.
+- **API Interfaces:** Briefly describe any APIs.
+- **Hardware Interfaces:** Mention any required hardware interactions.
+- **Software Interfaces:** Note any software interactions.
 
 ## 11. Glossary
-- **Term 1**: Definition
-- **Term 2**: Definition
+- **Term 1:** Definition
+- **Term 2:** Definition
 
 ## 12. Appendices
-- **Supporting Information**: Add any additional information here.
-- **Revision History**: Record any changes made to the document with dates and descriptions.
+- **Supporting Information:** Add any additional information here.
+- **Revision History:** Record any changes made to the document with dates and descriptions.
