@@ -4,7 +4,7 @@
 - **Project Name**: flight-booking-app
 - **Version**: 
 - **Date**: 1/27/2026
-- **Author(s)**:  Lord Acuña, Lorenzo Angelo Pira, Karl Rodriguez
+- **Authors**:  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -20,8 +20,8 @@
 
 ## 3. Introduction
 - **Purpose**: Emulate a flight booking system.
-- **Scope**: Define what the application will and will not do.
-- **Definitions, Acronyms, and Abbreviations**: List any terms or acronyms used.
+- **Scope**: Browse local flights. User registration and login are required to book flights.
+- **Definitions, Acronyms, and Abbreviations**: N/A
 - **References**: Singapore Airlines
 
 ## 4. Overall Description
@@ -32,7 +32,7 @@
 - **Assumptions and Dependencies**: List any assumptions made and dependencies on other projects or technologies.
 
 ## 5. Visual Mockup Reference
-- **Link or Screenshot**: Provide a link to the visual mockup or include a screenshot.
+- **Link**: [Figma](https://www.figma.com/design/Kq2DVtT49QCoOQa8mrmf2d/Flight-Booking-App-Mockup?node-id=0-1&p=f&t=dWs9CJJO2PM4AHJK-0)
 
 ## 6. Features
 - **Feature 1**: Description
