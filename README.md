@@ -52,6 +52,21 @@
 - **Feature 3**: Description
 - (Add more features as necessary)
 
+- **Feature 1: Flight Search**
+   - Users can search for local flights by specifying departure and destination locations, travel dates, and the number of passengers. Search results are displayed with flight details such as airline, departure/arrival times, duration, and price.
+
+- **Feature 2: Search Filtering and Sorting**
+   - Users can filter flight results by price, departure time, duration, and airline, or sort them according to their preferences for a streamlined booking experience.
+
+- **Feature 3: User Registration and Login**
+   - New users can register with email and password, while returning users can securely log in. User authentication ensures that personal data and booking history are protected.
+
+- **Feature 4: Flight Booking**
+   - Registered users can select flights, choose seating preferences if available, and proceed to booking. The system confirms seat availability in real time before completing the reservation.
+
+- **Feature 5: Booking Management**
+   - Users can view, modify, or cancel their bookings. The app provides a booking history, including past flights, receipts, and transaction details.
+
 ## 7. Functional Requirements
 ### Use Cases
 - **Use Case 1**:
