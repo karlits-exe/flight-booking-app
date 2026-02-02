@@ -27,10 +27,10 @@
 ## 4. Overall Description
 - **Product Perspective**: The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
 - **Product Functions**: The primary functionalities of the application include:
--- **Flight Search:** Users can search for flights based on departure and destination locations, dates, and passenger count.
--- **User Account Management:** Users can register, log in, and manage their personal profiles.
--- **Flight Booking:** Users can select flights, choose seating preferences, and complete bookings.
--- **Booking History:** Users can view past bookings, cancellations, and generate receipts.
+ - **Flight Search:** Users can search for flights based on departure and destination locations, dates, and passenger count.
+ - **User Account Management:** Users can register, log in, and manage their personal profiles.
+ - **Flight Booking:** Users can select flights, choose seating preferences, and complete bookings.
+ - **Booking History:** Users can view past bookings, cancellations, and generate receipts.
 - **User Classes and Characteristics**: Describe the different types of users.
 - **Operating Environment**: Specify the hardware, software, and network environment.
 - **Assumptions and Dependencies**: List any assumptions made and dependencies on other projects or technologies.
