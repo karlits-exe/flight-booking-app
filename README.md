@@ -196,8 +196,37 @@
 - **Software Interfaces:** Note any software interactions.
 
 ## 11. Glossary
-- **Term 1:** Definition
-- **Term 2:** Definition
+- ## 11. Glossary
+
+**Flight Booking App:** A web and mobile application designed to allow users to browse and simulate booking local flights.  
+
+**Flight Search:** A system feature that enables users to find available flights based on departure, destination, travel dates, and passenger count.  
+
+**Guest User:** A user who can browse and search flights but must register or log in to simulate a booking.  
+
+**Registered User:** A user who has created an account and can access booking simulation and booking history features.  
+
+**Administrator:** A system role responsible for managing flight data, monitoring bookings, and maintaining user accounts.  
+
+**User Account Management:** A feature that allows users to register, log in, and manage their personal profile information.  
+
+**Flight Booking Simulation:** A process that allows registered users to simulate reserving a flight without real payment processing.  
+
+**Booking Management:** A feature that enables users to view, modify, or cancel their flight bookings.  
+
+**Booking History:** A record of a user’s past and active flight bookings stored in the system.  
+
+**Authentication:** The process of verifying a user’s identity using login credentials such as email and password.  
+
+**Authorization:** A security mechanism that controls user access to specific features based on their role.  
+
+**Relational Database:** A structured data storage system that stores and manages users, flights, and booking records using related tables.  
+
+**Entity Relationship Diagram (ERD):** A visual representation of the relationships between data entities such as User, Flight, and Booking.  
+
+**Non-Functional Requirements:** System requirements that define performance, security, usability, and reliability constraints.  
+
+**Operating Environment:** The hardware, software, and network conditions under which the application operates.
 
 ## 12. Appendices
 - **Supporting Information:** Add any additional information here.
