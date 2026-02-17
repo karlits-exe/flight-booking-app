@@ -1,38 +1,50 @@
-# vue-project
+## 1. Title Page
+- **Project Name:** Flight Booking App
+- **Version:** 
+- **Date:** 1/27/2026
+- **Date:** 02 Feb 2026
+- **Authors:**  Lord Acuña, Kyle Carpizo, Jackielyn Clavaton, Lorenzo Angelo Pira, Karl Rodriguez
+- **Trello Board**: https://trello.com/b/2Ww7RvSO/b598-side-project
 
-This template should help get you started developing with Vue 3 in Vite.
+## 2. Table of Contents
+1. [Introduction](#3-introduction)
+2. [Overall Description](#4-overall-description)
+3. [Visual Mockup Reference](#5-visual-mockup-reference)
+4. [Features](#6-features)
+5. [Functional Requirements](#7-functional-requirements)
+6. [Non-Functional Requirements](#8-non-functional-requirements)
+7. [Data Requirements](#9-data-requirements)
+8. [External Interface Requirements](#10-external-interface-requirements)
+9. [Glossary](#11-glossary)
+10. [Appendices](#12-appendices)
 
-## Recommended IDE Setup
+## 3. Introduction
+- **Purpose:** Emulate a flight booking system.
+- **Scope:** Browse local flights. User registration and login are required to book flights.
+- **Definitions, Acronyms, and Abbreviations:** N/A
+- **Reference:** Singapore Airlines
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 4. Overall Description
+- **Product Perspective:** The Flight Booking App is a mobile and web application designed to provide users with an intuitive interface to browse and book local flights. It can integrate with airline databases, payment gateways, and user authentication systems. This positions the application as a modular component within a broader travel ecosystem, enabling interoperability with other travel services, such as hotel booking platforms and loyalty programs.
+- **Product Functions:** The primary functionalities of the application include:
+   - **Flight Search:** Users can search for flights based on departure and destination locations, dates, and passenger count.
+   - **User Account Management:** Users can register, log in, and manage their personal profiles.
+   - **Flight Booking:** Users can select flights, choose seating preferences, and complete bookings.
+   - **Booking History:** Users can view past bookings and cancellations.
+- **User Classes and Characteristics:**
+   - **Guest Users:** Users who can browse flights but must register or log in to complete a booking.
+   - **Registered Users:** Individuals who create an account to book flights and manage bookings. They require a secure login and access to personal booking history.
+   - **Administrators:** System administrators responsible for maintaining flight data, monitoring bookings, and managing user accounts.
+- **Operating Environment:**
+   - **Hardware:** Smartphones, tablets, and desktop computers.
+   - **Software:** Compatible with modern browsers (Chrome, Firefox, Safari) and mobile OS platforms (iOS, Android).
+   - **Network:** Internet connectivity is required for real-time flight searches, booking confirmation, and payment processing.
+- **Assumptions and Dependencies:**
+   - Users are expected to have an active internet connection and a compatible device.
+   - The system will comply with standard security protocols to protect user data and transactions.
 
-## Recommended Browser Setup
+## 5. Visual Mockup Reference
+- **Link:** [Figma](https://www.figma.com/design/Kq2DVtT49QCoOQa8mrmf2d/Flight-Booking-App-Mockup?node-id=0-1&p=f&t=dWs9CJJO2PM4AHJK-0)
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## 6. Features
+- **Feature 1: Flight Search**
