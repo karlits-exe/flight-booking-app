@@ -1,0 +1,60 @@
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 600 !important;
+  font-style: normal;
+  color: #1C3197 !important;
+}
+
+button,
+input[type="submit"] {
+  font-weight: 600 !important;
+}
+
+/********* HOMEPAGE **********/
+
+/*** Hero ***/
+
+.hero {
+  height: 450px;
+  background: url("../../images/flight-background.jpg")
+    center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/*** Booking Box ***/
+
+.mt-n5 {
+  margin-top: -80px;
+}
+
+/*** Discover ***/
+#discover h5 {
+  border-color: #D2EA1F !important;
+}
