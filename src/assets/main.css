@@ -19,6 +19,10 @@ h6 {
   color: #1C3197 !important;
 }
 
+label {
+  font-weight: 600 !important;
+}
+
 button,
 input[type="submit"] {
   font-weight: 600 !important;
@@ -65,4 +69,10 @@ input[type="submit"] {
 /*** Discover ***/
 #discover h5 {
   border-color: #D2EA1F !important;
+}
+
+/********* RESULTS **********/
+
+#results {
+  min-height: 100vh;
 }

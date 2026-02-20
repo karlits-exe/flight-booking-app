@@ -1,0 +1,139 @@
+{
+  "destinations": [
+    "Manila",
+    "Cebu",
+    "Bohol",
+    "Palawan",
+    "Davao",
+    "Ilocos",
+    "Albay",
+    "Siargao"
+  ],
+  "routes": [
+    {
+      "from": "Manila",
+      "to": "Cebu",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MC101", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200 },
+        { "flightNumber": "MC102", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2800 }
+      ],
+      "returns": [
+        { "flightNumber": "CM101", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Bohol",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MB201", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Palawan",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MP301", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3200 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Davao",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MD401", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4500 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Ilocos",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MI501", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2500 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Albay",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MA601", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2700 }
+      ]
+    },
+
+    {
+      "from": "Manila",
+      "to": "Siargao",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "MS701", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4200 }
+      ]
+    },
+
+    {
+      "from": "Cebu",
+      "to": "Davao",
+      "direct": true,
+      "departures": [
+        { "flightNumber": "CD801", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2500 }
+      ],
+      "connectingViaManila": [
+        {
+          "flightNumber": "CD901",
+          "stops": 1,
+          "totalDuration": "4h 00m",
+          "price": 3100,
+          "segments": [
+            { "from": "Cebu", "to": "Manila", "duration": "1h 30m" },
+            { "from": "Manila", "to": "Davao", "duration": "2h 00m" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "from": "Cebu",
+      "to": "Bohol",
+      "direct": false,
+      "connectingViaManila": [
+        {
+          "flightNumber": "CB1001",
+          "stops": 1,
+          "totalDuration": "3h 45m",
+          "price": 2900,
+          "segments": [
+            { "from": "Cebu", "to": "Manila", "duration": "1h 30m" },
+            { "from": "Manila", "to": "Bohol", "duration": "1h 30m" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "from": "Palawan",
+      "to": "Siargao",
+      "direct": false,
+      "connectingViaManila": [
+        {
+          "flightNumber": "PS1101",
+          "stops": 1,
+          "totalDuration": "4h 30m",
+          "price": 3900,
+          "segments": [
+            { "from": "Palawan", "to": "Manila", "duration": "1h 30m" },
+            { "from": "Manila", "to": "Siargao", "duration": "2h 10m" }
+          ]
+        }
+      ]
+    }
+
+    
+  ]
+}

@@ -1,7 +1,7 @@
 <template>
 	<nav id="nav" class="navbar navbar-expand-lg navbar-dark px-4 sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold text-warning" href="#">Logo</a>
+        <a class="navbar-brand fw-bold text-warning" href="/">WORLD CLASS</a>
 
         <button
           class="navbar-toggler"
@@ -20,8 +20,8 @@
           </ul>
 
           <div>
-            <button class="btn btn-sm btn-outline-light me-2">Log In</button>
-            <button class="btn btn-sm btn-light text-primary">Sign Up</button>
+            <router-link to="/login"><button class="btn btn-sm btn-outline-light me-2">Log In</button></router-link>
+            <router-link to="/signup"><button class="btn btn-sm btn-light text-primary">Sign Up</button></router-link>
           </div>
         </div>
       </div>

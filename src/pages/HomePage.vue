@@ -102,9 +102,12 @@
           </div>
 
           <div class="col-md-4 d-flex align-items-end">
-            <button class="btn btn-primary w-100" @click="searchFlight">
+            <router-link to="/results" custom v-slot="{ navigate }">
+              <!-- <button class="btn btn-primary w-100" @click="searchFlight"> -->
+              <button class="btn btn-primary w-100" @click="() => { searchFlight(); navigate(); }">
               SEARCH
-            </button>
+              </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -140,17 +143,9 @@
 <script setup>
 import { reactive, ref, computed } from "vue"
 
+import { airports } from "../constants/airports.js"
+
 const navLinks = ref(["Link", "Link", "Link", "Link"])
-
-const tabs = ref([
-  "BOOK TRIP",
-  "MANAGE BOOKING",
-  "CHECK IN",
-  "FLIGHT STATUS",
-  "FLIGHT SCHEDULE"
-])
-
-const activeTab = ref(0)
 
 const form = reactive({
   from: "Manila",
@@ -177,16 +172,15 @@ const destinations = ref([
   { name: "Siargao", image: "images/Siargao.jpg" }
 ])
 
-const airports = ref([
-  "Manila",
-  "Cebu",
-  "Bohol",
-  "Palawan",
-  "Davao",
-  "Ilocos",
-  "Albay",
-  "Siargao"
+const tabs = ref([
+  "BOOK TRIP",
+  "MANAGE BOOKING",
+  "CHECK IN",
+  "FLIGHT STATUS",
+  "FLIGHT SCHEDULE"
 ])
+
+const activeTab = ref(0)
 
 const passengerOptions = ref(
   Array.from({ length: 10 }, (_, i) => i + 1)
@@ -194,5 +188,14 @@ const passengerOptions = ref(
 
 const searchFlight = () => {
   console.log("Searching flight:", form)
+}
+
+function getFlights(from, to) {
+  if (from === "Manila" || to === "Manila") {
+    return directFlights[from + "-" + to]
+  }
+
+  // Otherwise connect via Manila
+  return buildConnectingFlight(from, "Manila", to)
 }
 </script>
