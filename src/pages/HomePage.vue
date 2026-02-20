@@ -13,11 +13,18 @@
 
     <!-- BOOKING TABS -->
     <div id="book" class="container mt-n5 position-relative">
-      <div class="bg-dark text-white p-3 d-flex justify-content-between">
-        <span v-for="(tab, index) in tabs" :key="index" class="px-3">
-          {{ tab }}
-        </span>
-      </div>
+      <ul class="nav nav-tabs bg-dark text-white">
+        <li class="nav-item" v-for="(tab, index) in tabs" :key="index">
+          <button
+            class="nav-link me-2"
+            :class="['nav-link', activeTab === index ? 'active bg-light' : 'text-white']"
+            :style="activeTab === index ? 'color: black;' : ''"
+            @click="activeTab = index"
+          >
+            {{ tab }}
+          </button>
+        </li>
+      </ul>
 
       <div class="bg-light p-4 shadow border">
         <h5 class="fw-bold">Where would you like to go?</h5>
@@ -142,6 +149,8 @@ const tabs = ref([
   "FLIGHT STATUS",
   "FLIGHT SCHEDULE"
 ])
+
+const activeTab = ref(0)
 
 const form = reactive({
   from: "Manila",

@@ -1,23 +1,23 @@
 <template>
-	<footer class="bg-primary text-white pt-4 pb-3">
+	<footer id="footer" class="text-white py-5">
       <div class="container">
         <div class="row">
 
-          <div class="col-md-4">
+          <div class="col-md-4 small">
             <h6 class="fw-bold text-white">About Us</h6>
-            <p class="small mb-1">Developers</p>
-            <p class="small mb-1">Legal Notices</p>
-            <p class="small mb-1">Special offers</p>
-            <p class="small">Help Center</p>
+            <p class="mb-1">Developers</p>
+            <p class="mb-1">Legal Notices</p>
+            <p class="mb-1">Special offers</p>
+            <p class="mb-0">Help Center</p>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 small">
             <h6 class="fw-bold text-white">Contact Us</h6>
-            <p class="small mb-1">02-4321-8769</p>
-            <p class="small">+63 9123 123 4321</p>
+            <p class="mb-1">02-4321-8769</p>
+            <p class="mb-0">+63 9123 123 4321</p>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 small">
             <h6 class="fw-bold text-white">Connect with us</h6>
             <div class="d-flex gap-3 fs-5">
               <i class="bi bi-facebook"></i>

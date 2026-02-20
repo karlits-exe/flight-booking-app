@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4 sticky-top">
+	<nav id="nav" class="navbar navbar-expand-lg navbar-dark px-4 sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold text-warning" href="#">Logo</a>
 
