@@ -20,8 +20,8 @@
           </ul>
 
           <div>
-            <button class="btn btn-outline-light me-2">Login</button>
-            <button class="btn btn-light text-primary">Sign Up</button>
+            <button class="btn btn-sm btn-outline-light me-2">Log In</button>
+            <button class="btn btn-sm btn-light text-primary">Sign Up</button>
           </div>
         </div>
       </div>
