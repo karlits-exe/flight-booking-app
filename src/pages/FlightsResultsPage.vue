@@ -372,7 +372,7 @@ function formatDate(dateStr) {
 
 const defaultForm = reactive({
   from: "Manila",
-  to: "Cebu",
+  to: "",
   depart: departDate,
   return: returnDate,
   travelClass: "Economy",
