@@ -134,12 +134,12 @@
     <!-- DISCOVER SECTION -->
     <section id="discover" class="container my-5">
       <h5 class="fw-bold border-start border-3 ps-2 mb-4">
-        Discover
+        Discover our destinations
       </h5>
 
       <div class="row g-4">
         <div
-          class="col-md-3"
+          class="col-md-3 col-sm-6 col-12"
           v-for="(place, index) in destinations"
           :key="index"
         >
