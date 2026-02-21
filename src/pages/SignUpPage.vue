@@ -1,5 +1,5 @@
 <template>
-  <div class="register-container d-flex justify-content-center py-5">
+  <div class="register-container d-flex justify-content-center py-5 px-4">
     <div class="register-card col-12 col-md-6">
       <h1 class="h4 fw-bold">Sign Up</h1>
 
@@ -10,7 +10,7 @@
         <h2 class="h5">Personal Information</h2>
 
         <!-- Title Dropdown -->
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-6">
         	<label>Title</label>
           <select v-model="title" required>
             <option value="" disabled>Select Title</option>
@@ -109,7 +109,7 @@
 
         <h2 class="h5 mt-4">Set Password</h2>
 
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-6">
         	<label>Password</label>
           <input
             v-model="password"
@@ -120,7 +120,7 @@
           />
         </div>
 
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-6">
         	<label>Confirm Password</label>
           <input
             v-model="confirmPassword"
@@ -131,7 +131,7 @@
           />
         </div>
 
-         <div class="form-group col-12 col-md-4">
+         <div class="form-group col-12 col-md-6">
 	        <button type="submit" class="btn btn-primary" :disabled="loading">
 	          {{ loading ? "Registering..." : "Register" }}
 	        </button>
