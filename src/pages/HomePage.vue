@@ -78,7 +78,7 @@
               type="checkbox" 
               id="oneWayCheck" 
               v-model="form.oneWay"
-            /> One way</label>
+            /> One Way</label>
             <input
               type="date"
               class="form-control"
