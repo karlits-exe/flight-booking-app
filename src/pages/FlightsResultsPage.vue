@@ -4,8 +4,15 @@
 <!--  	<div id="steps" class="bg-white p-4">
  		
  	</div> -->
- 	<div id="search-summary" class="bg-light p-3 text-dark text-center text-uppercase">
- 		<span class="me-3">{{ searchData.from }} &nbsp; <i class="bi bi-arrow-repeat"></i> &nbsp; {{ searchData.to }}</span>
+ 	<div id="search-summary" class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
+ 		<span class="me-3">{{ searchData.from }}
+ 			&nbsp;
+ 			<span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
+ 			<span v-else><i class="bi bi-arrow-right"></i></span>
+
+ 			&nbsp;
+ 			{{ searchData.to }}
+ 		</span>
  		<span class="me-3">&bull;</span>
  		<span class="me-3">
 		  {{ searchData.adults }} {{ searchData.adults === 1 ? 'Adult' : 'Adults' }};
@@ -13,10 +20,10 @@
 		</span>
 		<span class="me-3">&bull;</span>
 		<span class="me-3">Departure: {{ formatDate(searchData.depart) }}</span>
-		<span class="me-3">&bull;</span>
-		<span class="me-3">Return: {{ formatDate(searchData.return) }}</span>
+		<span class="me-3" v-if="!searchData.oneWay">&bull;</span>
+		<span class="me-3" v-if="!searchData.oneWay">Return: {{ formatDate(searchData.return) }}</span>
 
-		<span><button class="btn btn-sm btn-outline-dark text-uppercase" @click="toggleBook">Edit Search</button></span>
+		<span><button class="btn btn-sm btn-outline-dark text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
  	</div>
  	
 	<div id="book" class="container position-relative mt-5" v-show="showBook">
@@ -63,12 +70,19 @@
           </div>
 
           <div class="col-md-3">
-            <label class="form-label">Return Date</label>
+            <label class="form-label">Return Date <input 
+              class="form-check-input ms-3 me-1" 
+              type="checkbox" 
+              id="oneWayCheck" 
+              v-model="form.oneWay"
+            /> One way</label>
             <input
               type="date"
               class="form-control"
               v-model="form.return"
               :min="form.depart || today"
+              :disabled="form.oneWay"
+              :required="!form.oneWay"
             />
           </div>
 
@@ -185,7 +199,7 @@
     <div id="returns" class="container my-5">
   <div v-if="loading"></div>
   <div v-else>
-	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length" class="mt-5">
+	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5">
 	    <h2 class="h4">2. {{ searchData.to }} → {{ searchData.from }}</h2>
 
 	    <div
@@ -338,7 +352,8 @@ const handleSearch = () => {
       return: form.return,
       travelClass: form.travelClass,
       adults: form.adults,
-      children: form.children
+      children: form.children,
+      oneWay: form.oneWay
     }
   })
 }
@@ -350,7 +365,7 @@ const loading = ref(false)
 watch(
   () => route.query,
   async (newQuery) => {
-    const { from, to, depart, return: ret, travelClass, adults, children } = newQuery;
+    const { from, to, depart, return: ret, travelClass, adults, children, oneWay } = newQuery;
 
     loading.value = true;
 
@@ -361,7 +376,8 @@ watch(
       return: ret || '',
       travelClass: travelClass || 'Economy',
       adults: adults ? parseInt(adults) : 1,
-      children: children ? parseInt(children) : 0
+      children: children ? parseInt(children) : 0,
+      oneWay: oneWay === 'true'
     });
 
     Object.assign(form, {
@@ -371,7 +387,8 @@ watch(
       return: searchData.return,
       travelClass: searchData.travelClass,
       adults: searchData.adults,
-      children: searchData.children
+      children: searchData.children,
+      oneWay: searchData.oneWay
     });
 
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -396,19 +413,29 @@ watch(() => form.from, (newFrom) => {
 watch(
   () => form.depart,
   (newDepart) => {
-    if (!newDepart) return;
+    if (!newDepart || form.oneWay) return; // <-- skip if oneWay
 
     const departDate = new Date(newDepart);
     const returnDateObj = new Date(departDate);
     returnDateObj.setDate(departDate.getDate() + 3);
 
-    // Format as YYYY-MM-DD for input
     form.return = returnDateObj.toISOString().split("T")[0];
   }
 );
 
+// Check if one way
+watch(() => form.oneWay, (isOneWay) => {
+  if (isOneWay) form.return = ""
+  else {
+    // restore default return date +3 days
+    const departDateObj = new Date(form.depart)
+    departDateObj.setDate(departDateObj.getDate() + 3)
+    form.return = departDateObj.toISOString().split("T")[0]
+  }
+})
+
 onMounted(() => {
-  const { from, to, depart, return: ret, travelClass, adults, children } = route.query;
+  const { from, to, depart, return: ret, travelClass, adults, children, oneWay } = route.query;
 
   // Populate searchData so your template can display it
   Object.assign(searchData, {
@@ -418,7 +445,8 @@ onMounted(() => {
     return: ret || '',
     travelClass: travelClass || 'Economy',
     adults: adults ? parseInt(adults) : 1,
-    children: children ? parseInt(children) : 0
+    children: children ? parseInt(children) : 0,
+    oneWay: oneWay === 'true'
   });
 
   // Get flights for this route

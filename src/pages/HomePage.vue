@@ -73,13 +73,19 @@
           </div>
 
           <div class="col-md-3">
-            <label class="form-label">Return Date</label>
+            <label class="form-label">Return Date <input 
+              class="form-check-input ms-3 me-1" 
+              type="checkbox" 
+              id="oneWayCheck" 
+              v-model="form.oneWay"
+            /> One way</label>
             <input
               type="date"
               class="form-control"
               v-model="form.return"
               :min="form.depart || today"
-              required
+              :disabled="form.oneWay"
+              :required="!form.oneWay"
             />
           </div>
 
@@ -202,7 +208,8 @@ const form = reactive({
   return: returnDate, 
   travelClass: "Economy",
   adults: 1,
-  children: 0
+  children: 0,
+  oneWay: false
 })
 
 // DISCOVER
@@ -230,16 +237,26 @@ watch(() => form.from, (newFrom) => {
 watch(
   () => form.depart,
   (newDepart) => {
-    if (!newDepart) return;
+    if (!newDepart || form.oneWay) return; // <-- skip if oneWay
 
     const departDate = new Date(newDepart);
     const returnDateObj = new Date(departDate);
     returnDateObj.setDate(departDate.getDate() + 3);
 
-    // Format as YYYY-MM-DD for the input
     form.return = returnDateObj.toISOString().split("T")[0];
   }
 );
+
+// Check if one way
+watch(() => form.oneWay, (isOneWay) => {
+  if (isOneWay) form.return = ""
+  else {
+    // restore default return date +3 days
+    const departDateObj = new Date(form.depart)
+    departDateObj.setDate(departDateObj.getDate() + 3)
+    form.return = departDateObj.toISOString().split("T")[0]
+  }
+})
 
 // Search button to redirect to /results
 const handleSearch = () => {
@@ -252,7 +269,8 @@ const handleSearch = () => {
       return: form.return,
       travelClass: form.travelClass,
       adults: form.adults,
-      children: form.children
+      children: form.children,
+      oneWay: form.oneWay
     }
   })
 }
