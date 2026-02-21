@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <!-- HERO SECTION -->
-    <section id="landing" class="hero d-flex align-items-center text-white text-md-start text-center">
-      <div class="container">
-        <h1 class="fw-bold text-white">Welcome to World Class</h1>
-        <p class="lead">
-          Explore the skies, embrace new adventures, and plan your perfect local getaway effortlessly.
-        </p>
-        <a href="#discover"><button class="btn btn-primary">DISCOVER</button></a>
-      </div>
-    </section>
-
+  <!-- HERO SECTION -->
+  <section id="landing" class="hero d-flex align-items-center text-white text-md-start text-center">
+    <div class="container">
+      <h1 class="fw-bold text-white">Welcome to World Class</h1>
+      <p class="lead">
+        Explore the skies, embrace new adventures, and plan your perfect local getaway effortlessly.
+      </p>
+      <a href="#discover"><button class="btn btn-primary">DISCOVER</button></a>
+    </div>
+  </section>
+  
+  <div class="px-4">
     <!-- BOOKING TABS -->
     <div id="book" class="container mt-n5 position-relative">
       <ul class="nav nav-tabs bg-dark text-white flex-wrap">

@@ -1,42 +1,44 @@
 <template>
- <div id="results">
+  <!--    <div id="steps" class="bg-white p-4">
+    Add steps later
+  </div> -->
+  <div id="search-summary"
+  v-if="isValidSearch"
+  class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
+  <span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
+    &nbsp;
+    <span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
+    <span v-else><i class="bi bi-arrow-right"></i></span>
 
-<!--  	<div id="steps" class="bg-white p-4">
- 		
- 	</div> -->
- 	<div id="search-summary"
- 	v-if="isValidSearch"
- 	class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
- 		<span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
- 			&nbsp;
- 			<span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
- 			<span v-else><i class="bi bi-arrow-right"></i></span>
+    &nbsp;
+    {{ getAirportCode(searchData.to) }}
 
- 			&nbsp;
- 			{{ getAirportCode(searchData.to) }}
+    <span class="mx-3 d-none d-md-inline">&bull;</span>
+  </span>
 
- 			<span class="mx-3 d-none d-md-inline">&bull;</span>
- 		</span>
- 		
- 		<span class="mb-md-0 mb-2 d-md-inline d-block">
-		  {{ searchData.adults }} {{ searchData.adults === 1 ? 'Adult' : 'Adults' }}
-		  <span v-if="searchData.children > 0">
-		  	AND {{ searchData.children }} {{ searchData.children === 1 ? 'Child' : 'Children' }}
-		  </span>
+  <span class="mb-md-0 mb-2 d-md-inline d-block">
+    {{ searchData.adults }} {{ searchData.adults === 1 ? 'Adult' : 'Adults' }}
+    <span v-if="searchData.children > 0">
+      AND {{ searchData.children }} {{ searchData.children === 1 ? 'Child' : 'Children' }}
+    </span>
 
-		  <span class="mx-3 d-none d-md-inline">&bull;</span>
-		</span>
-		
-		<span class="mb-md-0 mb-3 d-md-inline d-block me-0 me-md-3">
-		Depart: {{ formatDate(searchData.depart) }}
-			<span class="mx-3 d-none d-md-inline" v-if="!searchData.oneWay">&bull;</span>
-			<span class="d-block d-md-inline mt-md-0 mt-2" v-if="!searchData.oneWay">Return: {{ formatDate(searchData.return) }}
-		</span>
-		</span>
+    <span class="mx-3 d-none d-md-inline">&bull;</span>
+  </span>
 
-		<span><button class="btn btn-sm btn-outline-dark text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
- 	</div>
- 	
+  <span class="mb-md-0 mb-3 d-md-inline d-block me-0 me-md-3">
+    Depart: {{ formatDate(searchData.depart) }}
+    <span class="mx-3 d-none d-md-inline" v-if="!searchData.oneWay">&bull;</span>
+    <span class="d-block d-md-inline mt-md-0 mt-2" v-if="!searchData.oneWay">Return: {{ formatDate(searchData.return) }}
+    </span>
+  </span>
+
+  <span><button class="btn btn-sm btn-outline-dark text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
+</div>
+
+<div id="results" class="px-4">
+
+
+ 
 	<div id="book" class="container position-relative mt-5" v-show="showBook">
       <div class="bg-light p-4 shadow-sm border">
       <form @submit.prevent="handleSearch">
@@ -150,7 +152,7 @@
     	</div>
 
     	<div v-else>
-    		<div v-if="flights.length" class="px-md-2 px-4">
+    		<div v-if="flights.length" class="px-md-2">
           <h1 class="h4 mb-0">Select
             <span v-if="searchData.oneWay">one-way flight</span>
             <span v-else>round-trip flights</span>
@@ -159,7 +161,7 @@
           <hr style="height: 3px;" class="bg-dark border-0 my-5" />
 
     			<h2 class="h4">1. {{ searchData.from }} → {{ searchData.to }}</h2>
-    			<div class="row mt-4" v-for="(flight, index) in flights" :key="index">
+    			<div class="row mt-4 mx-0" v-for="(flight, index) in flights" :key="index">
     				<div class="border p-4 col-md-10 col-12">
     					<div class="duration">
     						{{ flight.stops === 0 ? 'Direct' : flight.stops + ' Stop' }} &bull;
@@ -232,12 +234,12 @@
     <div id="returns" class="container my-5">
   <div v-if="loading"></div>
   <div v-else>
-	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5 px-md-2 px-4">
+	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5 px-md-2">
       <hr style="height: 3px;" class="bg-dark border-0 mt-5 mb-5" />
 	    <h2 class="h4">2. {{ searchData.to }} → {{ searchData.from }}</h2>
 
 	    <div
-	      class="row mt-4"
+	      class="row mt-4 mx-0"
 	      v-for="(flight, index) in flights[0].returns"
 	      :key="'return-' + index"
 	    >

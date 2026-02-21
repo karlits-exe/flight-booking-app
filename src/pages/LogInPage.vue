@@ -1,6 +1,6 @@
 <template>
-  <div class="login-container">
-    <div class="login-card">
+  <div class="login-container px-4">
+    <div class="login-card col-12 col-md-6">
       <h1 class="h4 fw-bold">Log In</h1>
 
       <form @submit.prevent="handleLogin">
@@ -8,7 +8,7 @@
         <div class="form-group">
           <input
             v-model="email"
-            type="email"
+            type="text"
             placeholder="Emai / Membership ID"
             required
           />
@@ -70,7 +70,6 @@ function handleLogin() {
 .login-card {
   background: white;
   padding: 2rem;
-  width: 350px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
