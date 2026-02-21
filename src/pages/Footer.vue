@@ -21,7 +21,7 @@
             <h6 class="fw-bold text-white">Connect with us</h6>
             <div class="d-flex gap-3 fs-6">
               <i class="bi bi-facebook"></i>
-              <i class="bi bi-twitter"></i>
+              <i class="bi bi-twitter-x"></i>
               <i class="bi bi-linkedin"></i>
               <i class="bi bi-instagram"></i>
             </div>
