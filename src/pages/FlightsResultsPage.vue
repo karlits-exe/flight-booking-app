@@ -385,20 +385,12 @@ watch(
   { immediate: true }
 );
 
-// Automatically update return date when departure changes
-watch(
-  () => form.depart,
-  (newDepart) => {
-    if (!newDepart) return;
-
-    const departDate = new Date(newDepart);
-    const returnDateObj = new Date(departDate);
-    returnDateObj.setDate(departDate.getDate() + 3);
-
-    // Format as YYYY-MM-DD for the input
-    form.return = returnDateObj.toISOString().split("T")[0];
+// Reset the destination when origin is changed
+watch(() => form.from, (newFrom) => {
+  if (form.to === newFrom) {
+    form.to = ""
   }
-);
+})
 
 // Watch form.depart to update form.return automatically (+3 days)
 watch(
