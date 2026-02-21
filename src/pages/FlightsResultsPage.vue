@@ -4,7 +4,9 @@
 <!--  	<div id="steps" class="bg-white p-4">
  		
  	</div> -->
- 	<div id="search-summary" class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
+ 	<div id="search-summary"
+ 	v-if="isValidSearch"
+ 	class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
  		<span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
  			&nbsp;
  			<span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
@@ -41,7 +43,7 @@
         <div class="row g-3">
           <div class="col-md-3">
             <label class="form-label">From</label>
-            <select class="form-select" v-model="form.from">
+            <select class="form-select" v-model="form.from" required>
               <option disabled value="">Select origin</option>
               <option
                 v-for="(airport, index) in airports"
@@ -55,7 +57,7 @@
 
           <div class="col-md-3">
             <label class="form-label">To</label>
-            <select class="form-select" v-model="form.to">
+            <select class="form-select" v-model="form.to" required>
               <option disabled value="">Select destination</option>
               <option
                 v-for="(airport, index) in airports"
@@ -75,6 +77,7 @@
               class="form-control"
               v-model="form.depart"
               :min="today"
+              required
             />
           </div>
 
@@ -141,7 +144,8 @@
     		<div class="spinner-border text-primary" role="status">
     			<span class="visually-hidden">Loading...</span>
     		</div>
-    		<p class="mt-3">Fetching flights...</p>
+    		<p class="mt-3" v-if="isValidSearch">Fetching flights...</p>
+    		<p class="mt-3" v-else>Loading...</p>
     	</div>
 
     	<div v-else>
@@ -199,8 +203,9 @@
     		</div>
 
     		<div v-else>
-    			<h2 class="h4">{{ searchData.from }} → {{ searchData.to }}</h2>
-    			<p>Sorry, no flights found for this route.</p>
+    			<h2 class="h4" v-if="isValidSearch">{{ searchData.from }} → {{ searchData.to }}</h2>
+    			<p v-if="isValidSearch">Sorry, no flights found for this route.</p>
+    			<p v-else>Please perform a new search.</p>
     		</div>
     	</div>
     </div>
@@ -289,6 +294,19 @@ const searchData = reactive({
   children: 0
 });
 
+// Check if search is valid - all parameters should be present
+const isValidSearch = computed(() => {
+  if (!searchData.from || !searchData.to || !searchData.depart) {
+    return false
+  }
+
+  if (!searchData.oneWay && !searchData.return) {
+    return false
+  }
+
+  return true
+})
+
 // Hide form initially
 const showBook = ref(false);
 
@@ -314,7 +332,8 @@ const form = reactive({
   return: "",
   travelClass: "Economy",
   adults: 1,
-  children: 0
+  children: 0,
+  oneWay: false
 })
 
 // Disable past dates
@@ -350,6 +369,17 @@ function formatDate(dateStr) {
   return `${formatted} (${dayName})`
 }
 
+const defaultForm = reactive({
+  from: "Manila",
+  to: "Cebu",
+  depart: departDate,
+  return: returnDate,
+  travelClass: "Economy",
+  adults: 1,
+  children: 0,
+  oneWay: false
+})
+
 // Search button to redirect to /results
 const handleSearch = () => {
   router.push({
@@ -376,36 +406,37 @@ const loading = ref(false)
 watch(
   () => route.query,
   async (newQuery) => {
-    const { from, to, depart, return: ret, travelClass, adults, children, oneWay } = newQuery;
-
     loading.value = true;
 
-    Object.assign(searchData, {
-      from: from || '',
-      to: to || '',
-      depart: depart || '',
-      return: ret || '',
-      travelClass: travelClass || 'Economy',
-      adults: adults ? parseInt(adults) : 1,
-      children: children ? parseInt(children) : 0,
-      oneWay: oneWay === 'true'
-    });
+    // Merge defaults with query
+    const merged = {
+      ...defaultForm,
+      from: newQuery.from || defaultForm.from,
+      to: newQuery.to || defaultForm.to,
+      depart: newQuery.depart || defaultForm.depart,
+      return: newQuery.return || defaultForm.return,
+      travelClass: newQuery.travelClass || defaultForm.travelClass,
+      adults: newQuery.adults ? parseInt(newQuery.adults) : defaultForm.adults,
+      children: newQuery.children ? parseInt(newQuery.children) : defaultForm.children,
+      oneWay: newQuery.oneWay === 'true' ? true : defaultForm.oneWay
+    };
 
-    Object.assign(form, {
-      from: searchData.from,
-      to: searchData.to,
-      depart: searchData.depart,
-      return: searchData.return,
-      travelClass: searchData.travelClass,
-      adults: searchData.adults,
-      children: searchData.children,
-      oneWay: searchData.oneWay
-    });
+    if (merged.oneWay) {
+	  merged.return = "";
+	}
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Update reactive states
+    Object.assign(searchData, merged);
+    Object.assign(form, merged);
 
-    if (searchData.from && searchData.to) {
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    if (isValidSearch.value) {
       flights.value = getFlights(searchData.from, searchData.to);
+      showBook.value = false;
+    } else {
+      flights.value = [];
+      showBook.value = true;
     }
 
     loading.value = false;
@@ -435,15 +466,22 @@ watch(
 );
 
 // Check if one way
-watch(() => form.oneWay, (isOneWay) => {
-  if (isOneWay) form.return = ""
-  else {
-    // restore default return date +3 days
-    const departDateObj = new Date(form.depart)
-    departDateObj.setDate(departDateObj.getDate() + 3)
-    form.return = departDateObj.toISOString().split("T")[0]
+watch(
+  () => form.oneWay,
+  (isOneWay) => {
+    if (isOneWay) {
+      form.return = "";
+
+    } else {
+      // Only set return date if it was empty or previously oneWay
+      if (!form.return) {
+        const departDateObj = new Date(form.depart);
+        departDateObj.setDate(departDateObj.getDate() + 3);
+        form.return = departDateObj.toISOString().split("T")[0];
+      }
+    }
   }
-})
+);
 
 onMounted(() => {
   const { from, to, depart, return: ret, travelClass, adults, children, oneWay } = route.query;
