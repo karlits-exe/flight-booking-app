@@ -9,7 +9,7 @@
       <a href="#discover"><button class="btn btn-primary">DISCOVER</button></a>
     </div>
   </section>
-  
+
   <div class="px-4">
     <!-- BOOKING TABS -->
     <div id="book" class="container mt-n5 position-relative">
@@ -205,7 +205,7 @@ const childOptions = Array.from({ length: 11 }, (_, i) => i)      // 0–9
 // Set values in the form
 const form = reactive({
   from: "Manila",
-  to: "Cebu",
+  to: "Ilocos Norte",
   depart: departDate,
   return: returnDate, 
   travelClass: "Economy",
@@ -217,12 +217,12 @@ const form = reactive({
 // DISCOVER
 const destinations = ref([
   { name: "Manila", image: "images/Manila.jpg", url: "/results?to=Manila" },
+  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?to=Ilocos+Norte" },
+  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?to=Puerto+Princesa" },
+  { name: "Albay", image: "images/Albay.jpg", url: "/results?to=Albay" },
   { name: "Cebu", image: "images/Cebu.jpg", url: "/results?to=Cebu" },
   { name: "Bohol", image: "images/Bohol.jpg", url: "/results?to=Bohol" },
-  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?to=Puerto+Princesa" },
   { name: "Davao", image: "images/Davao.jpg", url: "/results?to=Davao" },
-  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?to=Ilocos+Norte" },
-  { name: "Albay", image: "images/Albay.jpg", url: "/results?to=Albay" },
   { name: "Siargao", image: "images/Siargao.jpg", url: "/results?to=Siargao" }
 ])
 
