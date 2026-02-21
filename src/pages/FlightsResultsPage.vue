@@ -5,23 +5,32 @@
  		
  	</div> -->
  	<div id="search-summary" class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
- 		<span class="me-3">{{ searchData.from }}
+ 		<span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
  			&nbsp;
  			<span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
  			<span v-else><i class="bi bi-arrow-right"></i></span>
 
  			&nbsp;
- 			{{ searchData.to }}
+ 			{{ getAirportCode(searchData.to) }}
+
+ 			<span class="mx-3 d-none d-md-inline">&bull;</span>
  		</span>
- 		<span class="me-3">&bull;</span>
- 		<span class="me-3">
-		  {{ searchData.adults }} {{ searchData.adults === 1 ? 'Adult' : 'Adults' }};
-		  {{ searchData.children }} {{ searchData.children === 1 ? 'Child' : 'Children' }}
+ 		
+ 		<span class="mb-md-0 mb-2 d-md-inline d-block">
+		  {{ searchData.adults }} {{ searchData.adults === 1 ? 'Adult' : 'Adults' }}
+		  <span v-if="searchData.children > 0">
+		  	AND {{ searchData.children }} {{ searchData.children === 1 ? 'Child' : 'Children' }}
+		  </span>
+
+		  <span class="mx-3 d-none d-md-inline">&bull;</span>
 		</span>
-		<span class="me-3">&bull;</span>
-		<span class="me-3">Departure: {{ formatDate(searchData.depart) }}</span>
-		<span class="me-3" v-if="!searchData.oneWay">&bull;</span>
-		<span class="me-3" v-if="!searchData.oneWay">Return: {{ formatDate(searchData.return) }}</span>
+		
+		<span class="mb-md-0 mb-3 d-md-inline d-block me-0 me-md-3">
+		Depart: {{ formatDate(searchData.depart) }}
+			<span class="mx-3 d-none d-md-inline" v-if="!searchData.oneWay">&bull;</span>
+			<span class="d-block d-md-inline mt-md-0 mt-2" v-if="!searchData.oneWay">Return: {{ formatDate(searchData.return) }}
+		</span>
+		</span>
 
 		<span><button class="btn btn-sm btn-outline-dark text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
  	</div>
@@ -136,10 +145,10 @@
     	</div>
 
     	<div v-else>
-    		<div v-if="flights.length">
+    		<div v-if="flights.length" class="px-md-2 px-4">
     			<h2 class="h4">1. {{ searchData.from }} → {{ searchData.to }}</h2>
     			<div class="row mt-4" v-for="(flight, index) in flights" :key="index">
-    				<div class="border p-4 col-sm-10">
+    				<div class="border p-4 col-md-10 col-12">
     					<div class="duration">
     						{{ flight.stops === 0 ? 'Direct' : flight.stops + ' Stop' }} &bull;
     						{{ flight.totalDuration || flight.duration }}
@@ -153,7 +162,7 @@
     							</div>
     						</div>
 
-    						<div class="second-group col-sm-3 d-flex align-items-center justify-content-center">
+    						<div class="second-group col-sm-3 d-flex align-items-center justify-content-sm-center">
     							<i class="bi bi-airplane-fill h3" style="transform: rotate(90deg); display:inline-block; color:#D2EA1F;"></i>
     						</div>
 
@@ -168,12 +177,12 @@
     						<div class="fourth-group col-sm-3">
     							<div class="airline fw-bold pt-3">{{ flight.airline }}</div>
     							<div class="flightNum mb-3">{{ flight.flightNumber }}</div>
-    							<div class="more small">More Details</div>
+    							<!-- <div class="more small">More Details</div> -->
     						</div>
     					</div>
     				</div>
 
-    				<div class="border col-sm-2 p-0">
+    				<div class="border col-md-2 col-12 p-0">
     					<div class="class bg-primary p-2 text-white text-center text-uppercase small fw-bold">
     						{{ searchData.travelClass }}
     					</div>
@@ -199,7 +208,7 @@
     <div id="returns" class="container my-5">
   <div v-if="loading"></div>
   <div v-else>
-	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5">
+	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5 px-md-2 px-4">
 	    <h2 class="h4">2. {{ searchData.to }} → {{ searchData.from }}</h2>
 
 	    <div
@@ -207,7 +216,7 @@
 	      v-for="(flight, index) in flights[0].returns"
 	      :key="'return-' + index"
 	    >
-	      <div class="border p-4 col-sm-10">
+	      <div class="border p-4 col-md-10 col-12">
 	        <div class="duration">
 	          {{ flight.stops === 0 ? 'Direct' : flight.stops + ' Stop' }} &bull;
 	          {{ flight.totalDuration || flight.duration }}
@@ -221,7 +230,7 @@
 	            </div>
 	          </div>
 
-	          <div class="second-group col-sm-3 d-flex align-items-center justify-content-center">
+	          <div class="second-group col-sm-3 d-flex align-items-center justify-content-sm-center">
 	            <i class="bi bi-airplane-fill h3" style="transform: rotate(90deg); display:inline-block; color:#D2EA1F;"></i>
 	          </div>
 
@@ -236,12 +245,12 @@
 	          <div class="fourth-group col-sm-3">
 	            <div class="airline fw-bold pt-3">{{ flight.airline }}</div>
 	            <div class="flightNum mb-3">{{ flight.flightNumber }}</div>
-	            <div class="more small">More Details</div>
+	            <!-- <div class="more small">More Details</div> -->
 	          </div>
 	        </div>
 	      </div>
 
-	      <div class="border col-sm-2 p-0">
+	      <div class="border col-md-2 col-12 p-0">
 	        <div class="class bg-primary p-2 text-white text-center text-uppercase small fw-bold">
 	          {{ searchData.travelClass }}
 	        </div>
@@ -356,6 +365,8 @@ const handleSearch = () => {
       oneWay: form.oneWay
     }
   })
+
+  showBook.value = false;
 }
 
 const loading = ref(false)

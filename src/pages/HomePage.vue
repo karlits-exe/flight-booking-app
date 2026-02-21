@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- HERO SECTION -->
-    <section id="landing" class="hero d-flex align-items-center text-white">
+    <section id="landing" class="hero d-flex align-items-center text-white text-md-start text-center">
       <div class="container">
         <h1 class="fw-bold text-white">Welcome to World Class</h1>
         <p class="lead">
@@ -13,10 +13,10 @@
 
     <!-- BOOKING TABS -->
     <div id="book" class="container mt-n5 position-relative">
-      <ul class="nav nav-tabs bg-dark text-white">
-        <li class="nav-item" v-for="(tab, index) in tabs" :key="index">
+      <ul class="nav nav-tabs bg-dark text-white flex-wrap">
+        <li class="nav-item col-6 col-md-auto" v-for="(tab, index) in tabs" :key="index">
           <button
-            class="nav-link me-2"
+            class="nav-link me-2 w-100 text-center"
             :class="['nav-link', activeTab === index ? 'active bg-light' : 'text-white']"
             :style="activeTab === index ? 'color: black;' : ''"
             @click="activeTab = index"
@@ -175,7 +175,7 @@ const tabs = ref([
   "MANAGE BOOKING",
   "CHECK IN",
   "FLIGHT STATUS",
-  "FLIGHT SCHEDULE"
+  // "FLIGHT SCHEDULE"
 ])
 
 // Disable past dates
@@ -217,9 +217,9 @@ const destinations = ref([
   { name: "Manila", image: "images/Manila.jpg" },
   { name: "Cebu", image: "images/Cebu.jpg" },
   { name: "Bohol", image: "images/Bohol.jpg" },
-  { name: "Palawan", image: "images/Palawan.jpg" },
+  { name: "Puerto Princesa", image: "images/Palawan.jpg" },
   { name: "Davao", image: "images/Davao.jpg" },
-  { name: "Ilocos", image: "images/Ilocos.jpg" },
+  { name: "Ilocos Norte", image: "images/Ilocos.jpg" },
   { name: "Albay", image: "images/Albay.jpg" },
   { name: "Siargao", image: "images/Siargao.jpg" }
 ])
