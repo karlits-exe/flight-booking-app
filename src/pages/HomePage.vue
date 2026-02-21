@@ -144,7 +144,7 @@
           :key="index"
         >
           <div class="card h-100 shadow-sm">
-            <img :src="place.image" class="card-img-top" />
+            <a :href="place.url"><img :src="place.image" class="card-img-top" /></a>
             <div class="card-body">
               <h6 class="fw-bold">{{ place.name }}</h6>
               <small class="text-muted">Economy</small>
@@ -214,14 +214,14 @@ const form = reactive({
 
 // DISCOVER
 const destinations = ref([
-  { name: "Manila", image: "images/Manila.jpg" },
-  { name: "Cebu", image: "images/Cebu.jpg" },
-  { name: "Bohol", image: "images/Bohol.jpg" },
-  { name: "Puerto Princesa", image: "images/Palawan.jpg" },
-  { name: "Davao", image: "images/Davao.jpg" },
-  { name: "Ilocos Norte", image: "images/Ilocos.jpg" },
-  { name: "Albay", image: "images/Albay.jpg" },
-  { name: "Siargao", image: "images/Siargao.jpg" }
+  { name: "Manila", image: "images/Manila.jpg", url: "/results?from=Manila" },
+  { name: "Cebu", image: "images/Cebu.jpg", url: "/results?from=Cebu" },
+  { name: "Bohol", image: "images/Bohol.jpg", url: "/results?from=Bohol" },
+  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?from=Puerto+Princesa" },
+  { name: "Davao", image: "images/Davao.jpg", url: "/results?from=Davao" },
+  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?from=Ilocos+Norte" },
+  { name: "Albay", image: "images/Albay.jpg", url: "/results?from=Albay" },
+  { name: "Siargao", image: "images/Siargao.jpg", url: "/results?from=Siargao" }
 ])
 
 const activeTab = ref(0)
