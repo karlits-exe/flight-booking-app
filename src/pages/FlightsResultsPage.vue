@@ -291,7 +291,8 @@ const searchData = reactive({
   return: "",
   travelClass: "",
   adults: 1,
-  children: 0
+  children: 0,
+  oneWay: false
 });
 
 // Check if search is valid - all parameters should be present
