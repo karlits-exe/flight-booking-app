@@ -20,8 +20,8 @@
           </ul>
 
           <div>
-            <router-link to="/login"><button class="btn btn-sm btn-outline-light me-2">Log In</button></router-link>
-            <router-link to="/signup"><button class="btn btn-sm btn-light text-primary">Sign Up</button></router-link>
+            <router-link to="/login"><button class="btn btn-sm btn-outline-light me-2 text-uppercase">Log In</button></router-link>
+            <router-link to="/signup"><button class="btn btn-sm btn-light text-primary text-uppercase">Sign Up</button></router-link>
           </div>
         </div>
       </div>

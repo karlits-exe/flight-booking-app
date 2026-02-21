@@ -28,7 +28,7 @@
         </button>
       </form>
 
-      <p class="mt-4 small">Don't have an account? <router-link to="/signup">Sign up</router-link> now.</p>
+      <p class="mt-4 small mb-0">Don't have an account? <router-link to="/signup">Sign up</router-link> now.</p>
     </div>
   </div>
 </template>

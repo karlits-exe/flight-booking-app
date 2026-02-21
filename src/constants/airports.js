@@ -4,9 +4,9 @@ export const airports = ref([
   "Manila",
   "Cebu",
   "Bohol",
-  "Palawan",
+  "Puerto Princesa",
   "Davao",
-  "Ilocos",
+  "Ilocos Norte",
   "Albay",
   "Siargao"
 ])

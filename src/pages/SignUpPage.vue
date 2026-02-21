@@ -46,19 +46,45 @@
         </div>
 
         <!-- Date of Birth -->
-        <div class="form-group col-12 col-md-4">
+        <div class="form-group col-12 col-md-6">
         	<label>Date of Birth</label>
-          <input
-            v-model="dob"
-            type="date"
-            placeholder="Date of Birth"
-            required
-          />
+          	<div class="row g-2">
+			  <div class="col-md-4">
+			    <select class="form-select" v-model="selectedDay" required>
+			      <option value="" disabled>Day</option>
+			      <option v-for="day in days" :key="day" :value="day">
+			        {{ day }}
+			      </option>
+			    </select>
+			  </div>
+
+			  <div class="col-md-4">
+			    <select class="form-select" v-model="selectedMonth" required>
+			      <option value="" disabled>Month</option>
+			      <option
+			        v-for="month in months"
+			        :key="month.value"
+			        :value="month.value"
+			      >
+			        {{ month.label }}
+			      </option>
+			    </select>
+			  </div>
+
+			  <div class="col-md-4">
+			    <select class="form-select" v-model="selectedYear" required>
+			      <option value="" disabled>Year</option>
+			      <option v-for="year in years" :key="year" :value="year">
+			        {{ year }}
+			      </option>
+			    </select>
+			  </div>
+			</div>
         </div>
 
         <h2 class="h5 mt-4">Contact Details</h2>
 
-        <div class="form-group">
+        <div class="form-group col-12 col-md-6">
         	<label>Email Address</label>
           <input
             v-model="email"
@@ -69,7 +95,7 @@
         </div>
 
         <!-- Mobile Number -->
-        <div class="form-group">
+        <div class="form-group col-12 col-md-6">
         	<label>Mobile Number</label>
           <input
             v-model="mobile"
@@ -111,14 +137,14 @@
 	        </button>
 	    </div>
       </form>
-      
-      <p class="mt-4 small">Already have an account? <router-link to="/login">Log in</router-link> now.</p>
+
+      <p class="mt-4 small mb-0">Already have an account? <router-link to="/login">Log in</router-link> now.</p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 
 const title = ref("")
 const firstName = ref("")
@@ -131,6 +157,41 @@ const confirmPassword = ref("")
 const loading = ref(false)
 const error = ref("")
 const success = ref("")
+
+const selectedDay = ref("")
+const selectedMonth = ref("")
+const selectedYear = ref("")
+
+const currentYear = new Date().getFullYear()
+
+// Allow 100 years back, but minimum age 2
+const years = computed(() => {
+  const arr = []
+  for (let y = currentYear - 2; y >= currentYear - 100; y--) {
+    arr.push(y)
+  }
+  return arr
+})
+
+const months = [
+  { value: 1, label: "Jan" },
+  { value: 2, label: "Feb" },
+  { value: 3, label: "Mar" },
+  { value: 4, label: "Apr" },
+  { value: 5, label: "May" },
+  { value: 6, label: "Jun" },
+  { value: 7, label: "Jul" },
+  { value: 8, label: "Aug" },
+  { value: 9, label: "Sep" },
+  { value: 10, label: "Oct" },
+  { value: 11, label: "Nov" },
+  { value: 12, label: "Dec" }
+]
+
+// Simple 1–31 list
+const days = computed(() => {
+  return Array.from({ length: 31 }, (_, i) => i + 1)
+})
 
 function handleRegister() {
   loading.value = true

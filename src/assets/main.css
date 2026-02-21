@@ -19,7 +19,8 @@ h6 {
   color: #1C3197 !important;
 }
 
-label {
+label,
+.form-label {
   font-weight: 600 !important;
 }
 

@@ -30,10 +30,11 @@
         <h5 class="fw-bold">Where would you like to go?</h5>
         <hr />
 
+      <form @submit.prevent="handleSearch">
         <div class="row g-3">
           <div class="col-md-3">
             <label class="form-label">From</label>
-            <select class="form-select" v-model="form.from">
+            <select class="form-select" v-model="form.from" required>
               <option disabled value="">Select origin</option>
               <option
                 v-for="(airport, index) in airports"
@@ -47,7 +48,7 @@
 
           <div class="col-md-3">
             <label class="form-label">To</label>
-            <select class="form-select" v-model="form.to">
+            <select class="form-select" v-model="form.to" required>
               <option disabled value="">Select destination</option>
               <option
                 v-for="(airport, index) in airports"
@@ -67,6 +68,7 @@
               class="form-control"
               v-model="form.depart"
               :min="today"
+              required
             />
           </div>
 
@@ -77,10 +79,11 @@
               class="form-control"
               v-model="form.return"
               :min="form.depart || today"
+              required
             />
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-2">
             <label class="form-label">Class</label>
             <select class="form-select" v-model="form.travelClass">
               <option value="Economy">Economy</option>
@@ -88,28 +91,37 @@
           </div>
 
           <!-- PASSENGERS -->
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label class="form-label">Passengers</label>
-            <select class="form-select" v-model="form.passengers">
-              <option
-                v-for="(num, index) in passengerOptions"
-                :key="index"
-                :value="num"
-              >
-                {{ num }}
-              </option>
-            </select>
+
+            <div class="row g-2">
+              <div class="col-6">
+                <select class="form-select" v-model="form.adults">
+                  <option value="" disabled>12 years and older</option>
+                  <option v-for="num in adultOptions" :key="'a'+num" :value="num">
+                    {{ num }} Adult{{ num > 1 ? 's' : '' }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-6">
+                <select class="form-select" v-model="form.children">
+                  <option value="" disabled>2 to 11 years old</option>
+                  <option v-for="num in childOptions" :key="'c'+num" :value="num">
+                    {{ num }} Child{{ num === 1 ? '' : 'ren' }}
+                  </option>
+                </select>
+              </div>
+            </div>
           </div>
 
           <div class="col-md-4 d-flex align-items-end">
-            <router-link to="/results" custom v-slot="{ navigate }">
-              <!-- <button class="btn btn-primary w-100" @click="searchFlight"> -->
-              <button class="btn btn-primary w-100" @click="() => { searchFlight(); navigate(); }">
+            <button type="submit" class="btn btn-primary w-100">
               SEARCH
-              </button>
-            </router-link>
+            </button>
           </div>
         </div>
+      </form>
       </div>
     </div>
 
@@ -141,26 +153,59 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from "vue"
-
+import { reactive, ref, computed, watch } from "vue"
+import { useRouter } from "vue-router"
 import { airports } from "../constants/airports.js"
 
+const router = useRouter()
+
+// NAVIGATION
 const navLinks = ref(["Link", "Link", "Link", "Link"])
 
-const form = reactive({
-  from: "Manila",
-  to: "",
-  depart: "",
-  return: "",
-  travelClass: "Economy",
-  passengers: 1
-})
 
+// BOOKING BOX
+const tabs = ref([
+  "BOOK TRIP",
+  "MANAGE BOOKING",
+  "CHECK IN",
+  "FLIGHT STATUS",
+  "FLIGHT SCHEDULE"
+])
+
+// Disable past dates
 const today = computed(() => {
   const date = new Date()
   return date.toISOString().split("T")[0]
 })
 
+// Default values for Depature and Return Dates
+function formatDateForInput(date) {
+  return date.toISOString().split("T")[0]  // "YYYY-MM-DD"
+}
+
+const todayDate = new Date()
+const departDate = formatDateForInput(todayDate)
+
+const returnDateObj = new Date()
+returnDateObj.setDate(todayDate.getDate() + 3)  // +3 days
+const returnDate = formatDateForInput(returnDateObj)
+
+// Adult and Children - limited to 10
+const adultOptions = Array.from({ length: 10 }, (_, i) => i + 1)   // 1–9
+const childOptions = Array.from({ length: 11 }, (_, i) => i)      // 0–9
+
+// Set values in the form
+const form = reactive({
+  from: "Manila",
+  to: "Cebu",
+  depart: departDate,
+  return: returnDate, 
+  travelClass: "Economy",
+  adults: 1,
+  children: 0
+})
+
+// DISCOVER
 const destinations = ref([
   { name: "Manila", image: "images/Manila.jpg" },
   { name: "Cebu", image: "images/Cebu.jpg" },
@@ -172,30 +217,43 @@ const destinations = ref([
   { name: "Siargao", image: "images/Siargao.jpg" }
 ])
 
-const tabs = ref([
-  "BOOK TRIP",
-  "MANAGE BOOKING",
-  "CHECK IN",
-  "FLIGHT STATUS",
-  "FLIGHT SCHEDULE"
-])
-
 const activeTab = ref(0)
 
-const passengerOptions = ref(
-  Array.from({ length: 10 }, (_, i) => i + 1)
-)
-
-const searchFlight = () => {
-  console.log("Searching flight:", form)
-}
-
-function getFlights(from, to) {
-  if (from === "Manila" || to === "Manila") {
-    return directFlights[from + "-" + to]
+// Reset the destination when origin is changed
+watch(() => form.from, (newFrom) => {
+  if (form.to === newFrom) {
+    form.to = ""
   }
+})
 
-  // Otherwise connect via Manila
-  return buildConnectingFlight(from, "Manila", to)
+// Automatically update return date when departure changes
+watch(
+  () => form.depart,
+  (newDepart) => {
+    if (!newDepart) return;
+
+    const departDate = new Date(newDepart);
+    const returnDateObj = new Date(departDate);
+    returnDateObj.setDate(departDate.getDate() + 3);
+
+    // Format as YYYY-MM-DD for the input
+    form.return = returnDateObj.toISOString().split("T")[0];
+  }
+);
+
+// Search button to redirect to /results
+const handleSearch = () => {
+  router.push({
+    path: "/results",
+    query: {
+      from: form.from,
+      to: form.to,
+      depart: form.depart,
+      return: form.return,
+      travelClass: form.travelClass,
+      adults: form.adults,
+      children: form.children
+    }
+  })
 }
 </script>

@@ -1,13 +1,13 @@
 {
   "destinations": [
-    "Manila",
-    "Cebu",
-    "Bohol",
-    "Palawan",
-    "Davao",
-    "Ilocos",
-    "Albay",
-    "Siargao"
+    { "name": "Manila", "code": "MNL" },
+    { "name": "Cebu", "code": "CEB" },
+    { "name": "Bohol", "code": "TAG" },
+    { "name": "Puerto Princesa", "code": "PPS" },
+    { "name": "Davao", "code": "DVO" },
+    { "name": "Ilocos Norte", "code": "LAO" },
+    { "name": "Albay", "code": "DRP" },
+    { "name": "Siargao", "code": "IAO" }
   ],
   "routes": [
     {
@@ -15,125 +15,426 @@
       "to": "Cebu",
       "direct": true,
       "departures": [
-        { "flightNumber": "MC101", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200 },
-        { "flightNumber": "MC102", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2800 }
+        { "flightNumber": "PR101", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200, "departureTime": "6:00 AM", "arrivalTime": "7:30 AM" },
+        { "flightNumber": "5J102", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2800, "departureTime": "8:00 AM", "arrivalTime": "9:25 AM" },
+        { "flightNumber": "PR103", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300, "departureTime": "10:45 AM", "arrivalTime": "12:15 PM" },
+        { "flightNumber": "5J104", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2900, "departureTime": "1:00 PM", "arrivalTime": "2:25 PM" },
+        { "flightNumber": "PR105", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3400, "departureTime": "3:00 PM", "arrivalTime": "4:30 PM" },
+        { "flightNumber": "5J106", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3000, "departureTime": "5:00 PM", "arrivalTime": "6:25 PM" },
+        { "flightNumber": "PR107", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500, "departureTime": "7:00 PM", "arrivalTime": "8:30 PM" }
       ],
       "returns": [
-        { "flightNumber": "CM101", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300 }
-      ]
+		  { "flightNumber": "PR102", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300, "departureTime": "3:00 PM", "arrivalTime": "4:30 PM" },
+		  { "flightNumber": "5J202", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2800, "departureTime": "5:00 PM", "arrivalTime": "6:25 PM" },
+		  { "flightNumber": "PR204", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3100, "departureTime": "6:30 PM", "arrivalTime": "8:00 PM" },
+		  { "flightNumber": "5J206", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 2900, "departureTime": "7:15 PM", "arrivalTime": "8:40 PM" },
+		  { "flightNumber": "PR208", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3350, "departureTime": "8:00 PM", "arrivalTime": "9:30 PM" },
+		  { "flightNumber": "5J210", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3000, "departureTime": "9:00 PM", "arrivalTime": "10:25 PM" },
+		  { "flightNumber": "PR212", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200, "departureTime": "10:00 PM", "arrivalTime": "11:30 PM" }
+		]
     },
-
     {
-      "from": "Manila",
-      "to": "Bohol",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MB201", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500 }
-      ]
-    },
-
+	  "from": "Manila",
+	  "to": "Bohol",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "PR203", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500, "departureTime": "9:30 AM", "arrivalTime": "11:00 AM" },
+	    { "flightNumber": "5J204", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 3300, "departureTime": "12:00 PM", "arrivalTime": "1:35 PM" },
+	    { "flightNumber": "PR205", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3600, "departureTime": "3:00 PM", "arrivalTime": "4:30 PM" },
+	    { "flightNumber": "5J206", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3400, "departureTime": "5:30 PM", "arrivalTime": "7:10 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "PR207", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500, "departureTime": "11:30 AM", "arrivalTime": "1:00 PM" },
+	    { "flightNumber": "5J208", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 3300, "departureTime": "2:00 PM", "arrivalTime": "3:35 PM" },
+	    { "flightNumber": "PR209", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3600, "departureTime": "5:00 PM", "arrivalTime": "6:30 PM" },
+	    { "flightNumber": "5J210", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3400, "departureTime": "7:30 PM", "arrivalTime": "9:10 PM" }
+	  ]
+	},
     {
-      "from": "Manila",
-      "to": "Palawan",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MP301", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3200 }
-      ]
-    },
-
+	  "from": "Manila",
+	  "to": "Puerto Princesa",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J305", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3200, "departureTime": "8:00 AM", "arrivalTime": "9:25 AM" },
+	    { "flightNumber": "PR306", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3400, "departureTime": "10:00 AM", "arrivalTime": "11:30 AM" },
+	    { "flightNumber": "5J307", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3300, "departureTime": "1:00 PM", "arrivalTime": "2:25 PM" },
+	    { "flightNumber": "PR308", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500, "departureTime": "4:00 PM", "arrivalTime": "5:30 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J309", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3200, "departureTime": "9:45 AM", "arrivalTime": "11:10 AM" },
+	    { "flightNumber": "PR310", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3400, "departureTime": "12:00 PM", "arrivalTime": "1:30 PM" },
+	    { "flightNumber": "5J311", "airline": "Cebu Pacific", "duration": "1h 25m", "stops": 0, "price": 3300, "departureTime": "3:00 PM", "arrivalTime": "4:25 PM" },
+	    { "flightNumber": "PR312", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3500, "departureTime": "5:00 PM", "arrivalTime": "6:30 PM" }
+	  ]
+	},
     {
-      "from": "Manila",
-      "to": "Davao",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MD401", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4500 }
-      ]
-    },
-
+	  "from": "Manila",
+	  "to": "Davao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "PR407", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4500, "departureTime": "6:00 AM", "arrivalTime": "8:00 AM" },
+	    { "flightNumber": "5J408", "airline": "Cebu Pacific", "duration": "2h 00m", "stops": 0, "price": 4200, "departureTime": "8:30 AM", "arrivalTime": "10:30 AM" },
+	    { "flightNumber": "PR409", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4600, "departureTime": "12:00 PM", "arrivalTime": "2:00 PM" },
+	    { "flightNumber": "5J410", "airline": "Cebu Pacific", "duration": "2h 00m", "stops": 0, "price": 4300, "departureTime": "3:30 PM", "arrivalTime": "5:30 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "PR411", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4500, "departureTime": "8:30 AM", "arrivalTime": "10:30 AM" },
+	    { "flightNumber": "5J412", "airline": "Cebu Pacific", "duration": "2h 00m", "stops": 0, "price": 4200, "departureTime": "11:00 AM", "arrivalTime": "1:00 PM" },
+	    { "flightNumber": "PR413", "airline": "Philippine Airlines", "duration": "2h 00m", "stops": 0, "price": 4600, "departureTime": "2:00 PM", "arrivalTime": "4:00 PM" },
+	    { "flightNumber": "5J414", "airline": "Cebu Pacific", "duration": "2h 00m", "stops": 0, "price": 4300, "departureTime": "5:30 PM", "arrivalTime": "7:30 PM" }
+	  ]
+	},
     {
-      "from": "Manila",
-      "to": "Ilocos",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MI501", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2500 }
-      ]
-    },
-
+	  "from": "Manila",
+	  "to": "Ilocos Norte",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J509", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2500, "departureTime": "7:15 AM", "arrivalTime": "8:15 AM" },
+	    { "flightNumber": "PR510", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 2600, "departureTime": "8:45 AM", "arrivalTime": "9:45 AM" },
+	    { "flightNumber": "5J511", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2550, "departureTime": "11:00 AM", "arrivalTime": "12:00 PM" },
+	    { "flightNumber": "PR512", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 2650, "departureTime": "2:30 PM", "arrivalTime": "3:30 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J513", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2500, "departureTime": "8:00 AM", "arrivalTime": "9:00 AM" },
+	    { "flightNumber": "PR514", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 2600, "departureTime": "9:30 AM", "arrivalTime": "10:30 AM" },
+	    { "flightNumber": "5J515", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 2550, "departureTime": "1:00 PM", "arrivalTime": "2:00 PM" },
+	    { "flightNumber": "PR516", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 2650, "departureTime": "3:30 PM", "arrivalTime": "4:30 PM" }
+	  ]
+	},
     {
-      "from": "Manila",
-      "to": "Albay",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MA601", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2700 }
-      ]
-    },
-
+	  "from": "Manila",
+	  "to": "Albay",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "PR611", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2700, "departureTime": "11:00 AM", "arrivalTime": "12:10 PM" },
+	    { "flightNumber": "5J612", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2750, "departureTime": "7:30 AM", "arrivalTime": "8:40 AM" },
+	    { "flightNumber": "PR613", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2800, "departureTime": "2:00 PM", "arrivalTime": "3:10 PM" },
+	    { "flightNumber": "5J614", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2850, "departureTime": "4:15 PM", "arrivalTime": "5:25 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "PR615", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2700, "departureTime": "8:00 AM", "arrivalTime": "9:10 AM" },
+	    { "flightNumber": "5J616", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2750, "departureTime": "10:30 AM", "arrivalTime": "11:40 AM" },
+	    { "flightNumber": "PR617", "airline": "Philippine Airlines", "duration": "1h 10m", "stops": 0, "price": 2800, "departureTime": "1:30 PM", "arrivalTime": "2:40 PM" },
+	    { "flightNumber": "5J618", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2850, "departureTime": "3:45 PM", "arrivalTime": "4:55 PM" }
+	  ]
+	},
     {
-      "from": "Manila",
-      "to": "Siargao",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "MS701", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4200 }
-      ]
-    },
-
-    {
-      "from": "Cebu",
-      "to": "Davao",
-      "direct": true,
-      "departures": [
-        { "flightNumber": "CD801", "airline": "Cebu Pacific", "duration": "1h 10m", "stops": 0, "price": 2500 }
-      ],
-      "connectingViaManila": [
-        {
-          "flightNumber": "CD901",
-          "stops": 1,
-          "totalDuration": "4h 00m",
-          "price": 3100,
-          "segments": [
-            { "from": "Cebu", "to": "Manila", "duration": "1h 30m" },
-            { "from": "Manila", "to": "Davao", "duration": "2h 00m" }
-          ]
-        }
-      ]
-    },
-
-    {
-      "from": "Cebu",
-      "to": "Bohol",
-      "direct": false,
-      "connectingViaManila": [
-        {
-          "flightNumber": "CB1001",
-          "stops": 1,
-          "totalDuration": "3h 45m",
-          "price": 2900,
-          "segments": [
-            { "from": "Cebu", "to": "Manila", "duration": "1h 30m" },
-            { "from": "Manila", "to": "Bohol", "duration": "1h 30m" }
-          ]
-        }
-      ]
-    },
-
-    {
-      "from": "Palawan",
-      "to": "Siargao",
-      "direct": false,
-      "connectingViaManila": [
-        {
-          "flightNumber": "PS1101",
-          "stops": 1,
-          "totalDuration": "4h 30m",
-          "price": 3900,
-          "segments": [
-            { "from": "Palawan", "to": "Manila", "duration": "1h 30m" },
-            { "from": "Manila", "to": "Siargao", "duration": "2h 10m" }
-          ]
-        }
-      ]
-    }
-
-    
+	  "from": "Manila",
+	  "to": "Siargao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J703", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4200, "departureTime": "2:30 PM", "arrivalTime": "4:40 PM" },
+	    { "flightNumber": "PR704", "airline": "Philippine Airlines", "duration": "2h 10m", "stops": 0, "price": 4300, "departureTime": "6:00 AM", "arrivalTime": "8:10 AM" },
+	    { "flightNumber": "5J705", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4250, "departureTime": "8:45 AM", "arrivalTime": "10:55 AM" },
+	    { "flightNumber": "PR706", "airline": "Philippine Airlines", "duration": "2h 10m", "stops": 0, "price": 4350, "departureTime": "12:00 PM", "arrivalTime": "2:10 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J707", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4200, "departureTime": "5:00 AM", "arrivalTime": "7:10 AM" },
+	    { "flightNumber": "PR708", "airline": "Philippine Airlines", "duration": "2h 10m", "stops": 0, "price": 4300, "departureTime": "9:00 AM", "arrivalTime": "11:10 AM" },
+	    { "flightNumber": "5J709", "airline": "Cebu Pacific", "duration": "2h 10m", "stops": 0, "price": 4250, "departureTime": "1:30 PM", "arrivalTime": "3:40 PM" },
+	    { "flightNumber": "PR710", "airline": "Philippine Airlines", "duration": "2h 10m", "stops": 0, "price": 4350, "departureTime": "4:30 PM", "arrivalTime": "6:40 PM" }
+	  ]
+	},
+	{
+	  "from": "Cebu",
+	  "to": "Albay",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "DG701", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 1800, "departureTime": "7:00 AM", "arrivalTime": "8:15 AM" },
+	    { "flightNumber": "5J703", "airline": "Cebu Pacific", "duration": "1h 20m", "stops": 0, "price": 1900, "departureTime": "11:00 AM", "arrivalTime": "12:20 PM" },
+	    { "flightNumber": "DG705", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 2000, "departureTime": "3:00 PM", "arrivalTime": "4:15 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "DG702", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 1850, "departureTime": "9:00 AM", "arrivalTime": "10:15 AM" },
+	    { "flightNumber": "5J704", "airline": "Cebu Pacific", "duration": "1h 20m", "stops": 0, "price": 1950, "departureTime": "1:00 PM", "arrivalTime": "2:20 PM" },
+	    { "flightNumber": "DG706", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 2050, "departureTime": "5:00 PM", "arrivalTime": "6:15 PM" }
+	  ]
+	},
+	{
+	  "from": "Cebu",
+	  "to": "Bohol",
+	  "direct": true,
+	  "departures": [
+	    {
+	      "flightNumber": "PR720",
+	      "airline": "Philippine Airlines",
+	      "duration": "0h 40m",
+	      "stops": 0,
+	      "price": 2800,
+	      "departureTime": "10:00 AM",
+	      "arrivalTime": "10:40 AM"
+	    },
+	    {
+	      "flightNumber": "5J721",
+	      "airline": "Cebu Pacific",
+	      "duration": "0h 45m",
+	      "stops": 0,
+	      "price": 2700,
+	      "departureTime": "1:30 PM",
+	      "arrivalTime": "2:15 PM"
+	    }
+	  ],
+	  "returns": [
+	    {
+	      "flightNumber": "PR722",
+	      "airline": "Philippine Airlines",
+	      "duration": "0h 40m",
+	      "stops": 0,
+	      "price": 2800,
+	      "departureTime": "11:30 AM",
+	      "arrivalTime": "12:10 PM"
+	    },
+	    {
+	      "flightNumber": "5J723",
+	      "airline": "Cebu Pacific",
+	      "duration": "0h 45m",
+	      "stops": 0,
+	      "price": 2700,
+	      "departureTime": "3:00 PM",
+	      "arrivalTime": "3:45 PM"
+	    }
+	  ]
+	},
+	{
+	  "from": "Cebu",
+	  "to": "Davao",
+	  "direct": true,
+	  "departures": [
+	    {
+	      "flightNumber": "PR851",
+	      "airline": "Philippine Airlines",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 4200,
+	      "departureTime": "06:30 AM",
+	      "arrivalTime": "08:10 AM"
+	    },
+	    {
+	      "flightNumber": "5J811",
+	      "airline": "Cebu Pacific",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 3900,
+	      "departureTime": "09:00 AM",
+	      "arrivalTime": "10:40 AM"
+	    },
+	    {
+	      "flightNumber": "Z2641",
+	      "airline": "PAL Express",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 4100,
+	      "departureTime": "01:30 PM",
+	      "arrivalTime": "03:10 PM"
+	    }
+	  ],
+	  "returns": [
+	    {
+	      "flightNumber": "PR852",
+	      "airline": "Philippine Airlines",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 4200,
+	      "departureTime": "08:30 AM",
+	      "arrivalTime": "10:10 AM"
+	    },
+	    {
+	      "flightNumber": "5J812",
+	      "airline": "Cebu Pacific",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 3900,
+	      "departureTime": "12:45 PM",
+	      "arrivalTime": "02:25 PM"
+	    },
+	    {
+	      "flightNumber": "Z2642",
+	      "airline": "PAL Express",
+	      "duration": "1h 40m",
+	      "stops": 0,
+	      "price": 4050,
+	      "departureTime": "04:15 PM",
+	      "arrivalTime": "05:55 PM"
+	    }
+	  ]
+	},
+	{
+	  "from": "Cebu",
+	  "to": "Siargao",
+	  "direct": true,
+	  "departures": [
+	    {
+	      "flightNumber": "5J801",
+	      "airline": "Cebu Pacific",
+	      "duration": "2h 05m",
+	      "stops": 0,
+	      "price": 4200,
+	      "departureTime": "6:30 AM",
+	      "arrivalTime": "8:35 AM"
+	    },
+	    {
+	      "flightNumber": "PR802",
+	      "airline": "Philippine Airlines",
+	      "duration": "2h 10m",
+	      "stops": 0,
+	      "price": 4400,
+	      "departureTime": "9:00 AM",
+	      "arrivalTime": "11:10 AM"
+	    },
+	    {
+	      "flightNumber": "5J803",
+	      "airline": "Cebu Pacific",
+	      "duration": "2h 05m",
+	      "stops": 0,
+	      "price": 4300,
+	      "departureTime": "1:00 PM",
+	      "arrivalTime": "3:05 PM"
+	    }
+	  ],
+	  "returns": [
+	    {
+	      "flightNumber": "5J804",
+	      "airline": "Cebu Pacific",
+	      "duration": "2h 05m",
+	      "stops": 0,
+	      "price": 4200,
+	      "departureTime": "8:00 AM",
+	      "arrivalTime": "10:05 AM"
+	    },
+	    {
+	      "flightNumber": "PR806",
+	      "airline": "Philippine Airlines",
+	      "duration": "2h 10m",
+	      "stops": 0,
+	      "price": 4400,
+	      "departureTime": "11:30 AM",
+	      "arrivalTime": "1:40 PM"
+	    },
+	    {
+	      "flightNumber": "5J807",
+	      "airline": "Cebu Pacific",
+	      "duration": "2h 05m",
+	      "stops": 0,
+	      "price": 4300,
+	      "departureTime": "4:30 PM",
+	      "arrivalTime": "6:35 PM"
+	    }
+	  ]
+	},
+	{
+	  "from": "Bohol",
+	  "to": "Puerto Princesa",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J701", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2500, "departureTime": "6:30 AM", "arrivalTime": "8:05 AM" },
+	    { "flightNumber": "PR771", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200, "departureTime": "8:15 AM", "arrivalTime": "9:45 AM" },
+	    { "flightNumber": "5J703", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2600, "departureTime": "11:00 AM", "arrivalTime": "12:35 PM" },
+	    { "flightNumber": "PR773", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300, "departureTime": "1:00 PM", "arrivalTime": "2:30 PM" },
+	    { "flightNumber": "5J705", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2700, "departureTime": "3:30 PM", "arrivalTime": "5:05 PM" },
+	    { "flightNumber": "PR775", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3400, "departureTime": "5:45 PM", "arrivalTime": "7:15 PM" },
+	    { "flightNumber": "5J707", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2800, "departureTime": "7:00 PM", "arrivalTime": "8:35 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J702", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2500, "departureTime": "8:30 AM", "arrivalTime": "10:05 AM" },
+	    { "flightNumber": "PR772", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3200, "departureTime": "10:30 AM", "arrivalTime": "12:00 PM" },
+	    { "flightNumber": "5J704", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2600, "departureTime": "12:15 PM", "arrivalTime": "1:50 PM" },
+	    { "flightNumber": "PR774", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3300, "departureTime": "2:00 PM", "arrivalTime": "3:30 PM" },
+	    { "flightNumber": "5J706", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2700, "departureTime": "4:00 PM", "arrivalTime": "5:35 PM" },
+	    { "flightNumber": "PR776", "airline": "Philippine Airlines", "duration": "1h 30m", "stops": 0, "price": 3400, "departureTime": "6:00 PM", "arrivalTime": "7:30 PM" },
+	    { "flightNumber": "5J708", "airline": "Cebu Pacific", "duration": "1h 35m", "stops": 0, "price": 2800, "departureTime": "8:00 PM", "arrivalTime": "9:35 PM" }
+	  ]
+	},
+	{
+	  "from": "Bohol",
+	  "to": "Davao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J4741", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2200, "departureTime": "6:30 AM", "arrivalTime": "7:35 AM" },
+	    { "flightNumber": "PR2373", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2700, "departureTime": "8:00 AM", "arrivalTime": "9:05 AM" },
+	    { "flightNumber": "5J4743", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2300, "departureTime": "10:45 AM", "arrivalTime": "11:50 AM" },
+	    { "flightNumber": "PR2375", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2800, "departureTime": "1:00 PM", "arrivalTime": "2:05 PM" },
+	    { "flightNumber": "5J4745", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2400, "departureTime": "3:00 PM", "arrivalTime": "4:05 PM" },
+	    { "flightNumber": "PR2377", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2900, "departureTime": "5:45 PM", "arrivalTime": "6:50 PM" },
+	    { "flightNumber": "5J4747", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2500, "departureTime": "7:00 PM", "arrivalTime": "8:05 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J4742", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2200, "departureTime": "8:30 AM", "arrivalTime": "9:35 AM" },
+	    { "flightNumber": "PR2374", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2700, "departureTime": "10:00 AM", "arrivalTime": "11:05 AM" },
+	    { "flightNumber": "5J4744", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2300, "departureTime": "12:15 PM", "arrivalTime": "1:20 PM" },
+	    { "flightNumber": "PR2376", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2800, "departureTime": "2:00 PM", "arrivalTime": "3:05 PM" },
+	    { "flightNumber": "5J4746", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2400, "departureTime": "4:00 PM", "arrivalTime": "5:05 PM" },
+	    { "flightNumber": "PR2378", "airline": "Philippine Airlines", "duration": "1h 05m", "stops": 0, "price": 2900, "departureTime": "6:00 PM", "arrivalTime": "7:05 PM" },
+	    { "flightNumber": "5J4748", "airline": "Cebu Pacific", "duration": "1h 05m", "stops": 0, "price": 2500, "departureTime": "8:15 PM", "arrivalTime": "9:20 PM" }
+	  ]
+	},
+	{
+	  "from": "Bohol",
+	  "to": "Siargao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "PR3491", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 3800, "departureTime": "8:00 AM", "arrivalTime": "10:40 AM" },
+	    { "flightNumber": "PR3493", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 3950, "departureTime": "10:30 AM", "arrivalTime": "1:10 PM" },
+	    { "flightNumber": "PR3495", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4100, "departureTime": "1:30 PM", "arrivalTime": "4:10 PM" },
+	    { "flightNumber": "PR3497", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4200, "departureTime": "3:30 PM", "arrivalTime": "6:10 PM" },
+	    { "flightNumber": "PR3499", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4400, "departureTime": "5:45 PM", "arrivalTime": "8:25 PM" },
+	    { "flightNumber": "PR3501", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4600, "departureTime": "7:00 PM", "arrivalTime": "9:40 PM" },
+	    { "flightNumber": "PR3503", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4800, "departureTime": "9:00 PM", "arrivalTime": "11:40 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "PR3492", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 3800, "departureTime": "9:00 AM", "arrivalTime": "11:40 AM" },
+	    { "flightNumber": "PR3494", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 3950, "departureTime": "11:15 AM", "arrivalTime": "1:55 PM" },
+	    { "flightNumber": "PR3496", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4100, "departureTime": "1:30 PM", "arrivalTime": "4:10 PM" },
+	    { "flightNumber": "PR3498", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4200, "departureTime": "3:30 PM", "arrivalTime": "6:10 PM" },
+	    { "flightNumber": "PR3500", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4400, "departureTime": "5:00 PM", "arrivalTime": "7:40 PM" },
+	    { "flightNumber": "PR3502", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4600, "departureTime": "7:00 PM", "arrivalTime": "9:40 PM" },
+	    { "flightNumber": "PR3504", "airline": "Philippine Airlines", "duration": "2h 40m", "stops": 0, "price": 4800, "departureTime": "9:00 PM", "arrivalTime": "11:40 PM" }
+	  ]
+	},
+	{
+	  "from": "Puerto Princesa",
+	  "to": "Davao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "5J4761", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3500, "departureTime": "10:55 AM", "arrivalTime": "12:35 PM" },
+	    { "flightNumber": "5J4763", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3600, "departureTime": "1:20 PM", "arrivalTime": "3:00 PM" },
+	    { "flightNumber": "5J4765", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3700, "departureTime": "3:50 PM", "arrivalTime": "5:30 PM" },
+	    { "flightNumber": "5J4767", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3800, "departureTime": "6:00 PM", "arrivalTime": "7:40 PM" },
+	    { "flightNumber": "5J4769", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3900, "departureTime": "8:15 PM", "arrivalTime": "9:55 PM" },
+	    { "flightNumber": "5J4771", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 4000, "departureTime": "9:30 PM", "arrivalTime": "11:10 PM" },
+	    { "flightNumber": "5J4773", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 4200, "departureTime": "11:00 PM", "arrivalTime": "12:40 AM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "5J4762", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3500, "departureTime": "12:15 PM", "arrivalTime": "1:55 PM" },
+	    { "flightNumber": "5J4764", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3600, "departureTime": "2:30 PM", "arrivalTime": "4:10 PM" },
+	    { "flightNumber": "5J4766", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3700, "departureTime": "4:30 PM", "arrivalTime": "6:10 PM" },
+	    { "flightNumber": "5J4768", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3800, "departureTime": "6:30 PM", "arrivalTime": "8:10 PM" },
+	    { "flightNumber": "5J4770", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 3900, "departureTime": "7:45 PM", "arrivalTime": "9:25 PM" },
+	    { "flightNumber": "5J4772", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 4000, "departureTime": "9:00 PM", "arrivalTime": "10:40 PM" },
+	    { "flightNumber": "5J4774", "airline": "Cebu Pacific", "duration": "1h 40m", "stops": 0, "price": 4200, "departureTime": "10:30 PM", "arrivalTime": "12:10 AM" }
+	  ]
+	},
+	{
+	  "from": "Davao",
+	  "to": "Siargao",
+	  "direct": true,
+	  "departures": [
+	    { "flightNumber": "DG6872", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3200, "departureTime": "08:00 AM", "arrivalTime": "09:15 AM" },
+	    { "flightNumber": "DG6874", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3300, "departureTime": "10:30 AM", "arrivalTime": "11:45 AM" },
+	    { "flightNumber": "DG6876", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3400, "departureTime": "01:00 PM", "arrivalTime": "02:15 PM" },
+	    { "flightNumber": "DG6878", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3500, "departureTime": "03:30 PM", "arrivalTime": "04:45 PM" },
+	    { "flightNumber": "DG6880", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3600, "departureTime": "05:00 PM", "arrivalTime": "06:15 PM" },
+	    { "flightNumber": "DG6882", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3700, "departureTime": "07:00 PM", "arrivalTime": "08:15 PM" },
+	    { "flightNumber": "DG6884", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3800, "departureTime": "09:00 PM", "arrivalTime": "10:15 PM" }
+	  ],
+	  "returns": [
+	    { "flightNumber": "DG6873", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3200, "departureTime": "09:30 AM", "arrivalTime": "10:45 AM" },
+	    { "flightNumber": "DG6875", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3300, "departureTime": "12:00 PM", "arrivalTime": "01:15 PM" },
+	    { "flightNumber": "DG6877", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3400, "departureTime": "02:30 PM", "arrivalTime": "03:45 PM" },
+	    { "flightNumber": "DG6879", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3500, "departureTime": "04:30 PM", "arrivalTime": "05:45 PM" },
+	    { "flightNumber": "DG6881", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3600, "departureTime": "06:30 PM", "arrivalTime": "07:45 PM" },
+	    { "flightNumber": "DG6883", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3700, "departureTime": "08:30 PM", "arrivalTime": "09:45 PM" },
+	    { "flightNumber": "DG6885", "airline": "Cebgo", "duration": "1h 15m", "stops": 0, "price": 3800, "departureTime": "10:00 PM", "arrivalTime": "11:15 PM" }
+	  ]
+	}
   ]
 }
