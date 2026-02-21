@@ -49,6 +49,7 @@
                 v-for="(airport, index) in airports"
                 :key="index"
                 :value="airport"
+                :disabled="airport === form.to"
               >
                 {{ airport }}
               </option>
@@ -150,6 +151,11 @@
 
     	<div v-else>
     		<div v-if="flights.length" class="px-md-2 px-4">
+          <h1 class="h4">Select Flight<span v-if="!searchData.oneWay">s</span>
+          </h1>
+
+          <hr style="height: 3px;" class="bg-dark border-0 my-5" />
+
     			<h2 class="h4">1. {{ searchData.from }} → {{ searchData.to }}</h2>
     			<div class="row mt-4" v-for="(flight, index) in flights" :key="index">
     				<div class="border p-4 col-md-10 col-12">
@@ -203,9 +209,20 @@
     		</div>
 
     		<div v-else>
-    			<h2 class="h4" v-if="isValidSearch">{{ searchData.from }} → {{ searchData.to }}</h2>
-    			<p v-if="isValidSearch">Sorry, no flights found for this route.</p>
-    			<p v-else>Please perform a new search.</p>
+          <div v-if="isValidSearch">
+      			<h1 class="h4 mb-3">{{ searchData.from }} → {{ searchData.to }}</h1>
+
+      			<p>Sorry, no direct flights found for this route.</p>
+          </div>
+          <div v-else-if="searchData.to && !searchData.from">
+              <h1 class="h4 mb-3">Discover {{ searchData.to }} today</h1>
+            <p>Find direct flights to and from <strong>{{ searchData.to }}</strong> by using the search box above.
+            </p>
+          </div>
+    			<div v-else>
+            <h1 class="h4 mb-3">Search affordable local flights</h1>
+            <p>Find flights today, and get packing soon.</p>
+          </div>
     		</div>
     	</div>
     </div>
@@ -214,6 +231,7 @@
   <div v-if="loading"></div>
   <div v-else>
 	  <div v-if="flights.length && flights[0].returns && flights[0].returns.length && !searchData.oneWay" class="mt-5 px-md-2 px-4">
+      <hr style="height: 3px;" class="bg-dark border-0 mt-5 mb-5" />
 	    <h2 class="h4">2. {{ searchData.to }} → {{ searchData.from }}</h2>
 
 	    <div
@@ -371,7 +389,7 @@ function formatDate(dateStr) {
 }
 
 const defaultForm = reactive({
-  from: "Manila",
+  from: "",
   to: "",
   depart: departDate,
   return: returnDate,

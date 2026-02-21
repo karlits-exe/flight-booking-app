@@ -214,14 +214,14 @@ const form = reactive({
 
 // DISCOVER
 const destinations = ref([
-  { name: "Manila", image: "images/Manila.jpg", url: "/results?from=Manila" },
-  { name: "Cebu", image: "images/Cebu.jpg", url: "/results?from=Cebu" },
-  { name: "Bohol", image: "images/Bohol.jpg", url: "/results?from=Bohol" },
-  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?from=Puerto+Princesa" },
-  { name: "Davao", image: "images/Davao.jpg", url: "/results?from=Davao" },
-  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?from=Ilocos+Norte" },
-  { name: "Albay", image: "images/Albay.jpg", url: "/results?from=Albay" },
-  { name: "Siargao", image: "images/Siargao.jpg", url: "/results?from=Siargao" }
+  { name: "Manila", image: "images/Manila.jpg", url: "/results?to=Manila" },
+  { name: "Cebu", image: "images/Cebu.jpg", url: "/results?to=Cebu" },
+  { name: "Bohol", image: "images/Bohol.jpg", url: "/results?to=Bohol" },
+  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?to=Puerto+Princesa" },
+  { name: "Davao", image: "images/Davao.jpg", url: "/results?to=Davao" },
+  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?to=Ilocos+Norte" },
+  { name: "Albay", image: "images/Albay.jpg", url: "/results?to=Albay" },
+  { name: "Siargao", image: "images/Siargao.jpg", url: "/results?to=Siargao" }
 ])
 
 const activeTab = ref(0)
