@@ -98,7 +98,7 @@
 		    { "flightNumber": "5J513", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 3000, "departureTime": "08:00 AM", "arrivalTime": "09:00 AM" },
 		    { "flightNumber": "PR514", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 3300, "departureTime": "09:30 AM", "arrivalTime": "10:30 AM" },
 		    { "flightNumber": "5J515", "airline": "Cebu Pacific", "duration": "1h 00m", "stops": 0, "price": 3100, "departureTime": "01:00 PM", "arrivalTime": "02:00 PM" },
-		    { "flightNumber": "PR516", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 3500, "departureTime": "03:30 PM", "arrivalTime": "04:30 PM" }
+		    { "flightNumber": "PR516", "airline": "Philippine Airlines", "duration": "1h 00m", "stops": 0, "price": 2900, "departureTime": "03:30 PM", "arrivalTime": "04:30 PM" }
 		  ]
 		},
     {
