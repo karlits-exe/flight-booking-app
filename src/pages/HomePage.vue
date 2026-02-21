@@ -144,7 +144,9 @@
           :key="index"
         >
           <div class="card h-100 shadow-sm">
-            <a :href="place.url"><img :src="place.image" class="card-img-top" /></a>
+              <router-link :to="place.url">
+                <img :src="place.image" class="card-img-top" />
+              </router-link>
             <div class="card-body">
               <h6 class="fw-bold">{{ place.name }}</h6>
               <small class="text-muted">Economy</small>

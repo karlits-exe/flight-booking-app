@@ -151,7 +151,7 @@
 
     	<div v-else>
     		<div v-if="flights.length" class="px-md-2 px-4">
-          <h1 class="h4">Select Flight<span v-if="!searchData.oneWay">s</span>
+          <h1 class="h4 mb-0">Select Flight<span v-if="!searchData.oneWay">s</span>
           </h1>
 
           <hr style="height: 3px;" class="bg-dark border-0 my-5" />

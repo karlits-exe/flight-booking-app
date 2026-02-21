@@ -71,5 +71,5 @@ input[type="submit"] {
 /********* RESULTS **********/
 
 #results {
-  min-height: 100vh;
+  min-height: 60vh;
 }
