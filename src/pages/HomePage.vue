@@ -140,7 +140,7 @@
       <div class="row g-4">
         <div
           class="col-md-3 col-sm-6 col-12"
-          v-for="(place, index) in destinations"
+          v-for="(place, index) in places"
           :key="index"
         >
           <div class="card h-100 shadow-sm">
@@ -164,6 +164,7 @@
 import { reactive, ref, computed, watch } from "vue"
 import { useRouter } from "vue-router"
 import { airports } from "../constants/airports.js"
+import { places } from '../constants/destinations.js'
 
 const router = useRouter()
 
@@ -209,18 +210,6 @@ const form = reactive({
   children: 0,
   oneWay: false
 })
-
-// DISCOVER
-const destinations = ref([
-  { name: "Manila", image: "images/Manila.jpg", url: "/results?to=Manila" },
-  { name: "Ilocos Norte", image: "images/Ilocos.jpg", url: "/results?to=Ilocos+Norte" },
-  { name: "Puerto Princesa", image: "images/Palawan.jpg", url: "/results?to=Puerto+Princesa" },
-  { name: "Albay", image: "images/Albay.jpg", url: "/results?to=Albay" },
-  { name: "Cebu", image: "images/Cebu.jpg", url: "/results?to=Cebu" },
-  { name: "Bohol", image: "images/Bohol.jpg", url: "/results?to=Bohol" },
-  { name: "Davao", image: "images/Davao.jpg", url: "/results?to=Davao" },
-  { name: "Siargao", image: "images/Siargao.jpg", url: "/results?to=Siargao" }
-])
 
 const activeTab = ref(0)
 

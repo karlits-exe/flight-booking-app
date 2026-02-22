@@ -219,9 +219,17 @@
       			<p>Sorry, there are no direct flights found for this route.</p>
           </div>
           <div v-else-if="searchData.to && !searchData.from">
-              <h1 class="h4 mb-3 fw-bold">Discover {{ searchData.to }} today</h1>
-            <p>Find direct flights to and from <strong>{{ searchData.to }}</strong> by using the search box above.
-            </p>
+              <h1 class="h4 mb-3 fw-bold">Discover {{ searchData.to }}</h1>
+
+              <div class="row">
+                <div class="col-12 col-lg-3 mb-lg-0 mb-3">
+                  <img :src="selectedDestination?.image" class="w-100 rounded img-fluid">
+                </div>
+                <div class="col-12 col-lg-9 mb-lg-0 mb-3">
+                  <p class="lead">{{ selectedDestination?.description }}</p>
+                  <p>Find direct flights to and from <strong>{{ searchData.to }}</strong> today.</p>
+              </div>
+            </div>
           </div>
     			<div v-else>
             <h1 class="h4 mb-3 fw-bold">Search affordable local flights</h1>
@@ -303,6 +311,11 @@ import { useRoute, useRouter } from "vue-router"
 import { getFlights } from "../services/flightService.js"
 
 import { airports } from "../constants/airports.js"
+import { places } from '../constants/destinations.js'
+
+const selectedDestination = computed(() => 
+  places.value.find(d => d.name === searchData.to)
+)
 
 import { destinations } from "../data/flights.json"
 
