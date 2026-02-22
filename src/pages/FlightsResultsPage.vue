@@ -216,7 +216,7 @@
           <div v-if="isValidSearch">
       			<h1 class="h4 mb-3 fw-bold">{{ searchData.from }} → {{ searchData.to }}</h1>
 
-      			<p>Sorry, no direct flights found for this route.</p>
+      			<p>Sorry, there are no direct flights found for this route.</p>
           </div>
           <div v-else-if="searchData.to && !searchData.from">
               <h1 class="h4 mb-3 fw-bold">Discover {{ searchData.to }} today</h1>
