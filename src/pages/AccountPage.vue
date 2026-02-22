@@ -389,20 +389,6 @@ function handleSave() {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-h1 {
-  color: #1e3c72;
-}
-
-.btn-link {
-  color: #2a5298;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.btn-link:hover {
-  color: #1e3c72;
-}
-
 /* Profile Picture */
 .profile-picture-wrapper {
   position: relative;
@@ -451,77 +437,9 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.section-header h2 {
-  color: #2a5298;
-  font-weight: 600;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #495057;
-}
-
-input,
-select {
-  width: 100%;
-  padding: 0.6rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-}
-
-input:disabled,
-select:disabled {
-  background-color: #f8f9fa;
-  color: #6c757d;
-  cursor: not-allowed;
-}
-
 .disabled-field {
   background-color: #e9ecef !important;
   font-weight: 500;
-}
-
-button {
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-button:disabled {
-  background: #999;
-  cursor: not-allowed;
-}
-
-.btn-outline-primary {
-  border: 1px solid #2a5298;
-  color: #2a5298;
-  background: white;
-}
-
-.btn-outline-primary:hover {
-  background: #2a5298;
-  color: white;
-}
-
-.btn-outline-secondary {
-  border: 1px solid #6c757d;
-  color: #6c757d;
-  background: white;
-}
-
-.btn-outline-secondary:hover {
-  background: #6c757d;
-  color: white;
 }
 
 .action-buttons {
@@ -546,26 +464,6 @@ button:disabled {
 
 .login-info i {
   color: #2a5298;
-}
-
-.error {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  color: #dc3545;
-  background: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.success {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  color: #155724;
-  background: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-radius: 5px;
-  text-align: center;
 }
 
 /* Responsive */

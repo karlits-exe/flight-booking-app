@@ -17,11 +17,13 @@ h6 {
   font-weight: 600 !important;
   font-style: normal;
   color: #1C3197 !important;
+  margin-bottom: 10px;
 }
 
 label,
 .form-label {
   font-weight: 600 !important;
+  margin-bottom: 5px;
 }
 
 button,
@@ -29,8 +31,46 @@ input[type="submit"] {
   font-weight: 600 !important;
 }
 
+button {
+  /*width: 100%;*/
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #999;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
 .bg-primary {
   background: #1C3197 !important;
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+  text-align: center;
+}
+
+.success {
+  margin-top: 1rem;
+  color: green;
+  text-align: center;
 }
 
 /********* HOMEPAGE **********/

@@ -132,7 +132,7 @@
         </div>
 
          <div class="form-group col-12 col-md-6">
-	        <button type="submit" class="btn btn-primary" :disabled="loading">
+	        <button type="submit" class="btn btn-primary w-100" :disabled="loading">
 	          {{ loading ? "Registering..." : "Register" }}
 	        </button>
 	    </div>
@@ -239,47 +239,5 @@ function handleRegister() {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-h1 {
-  margin-bottom: 1.5rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-input,
-select {
-  width: 100%;
-  padding: 0.6rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  width: 100%;
-  padding: 0.7rem;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:disabled {
-  background: #999;
-}
-
-.error {
-  margin-top: 1rem;
-  color: red;
-  text-align: center;
-}
-
-.success {
-  margin-top: 1rem;
-  color: green;
-  text-align: center;
 }
 </style>

@@ -23,6 +23,7 @@
               :type="showCurrentPassword ? 'text' : 'password'"
               placeholder="Enter your current password"
               required
+              class="w-100"
             />
             <button
               type="button"
@@ -45,6 +46,7 @@
               required
               minlength="8"
               @input="checkPasswordStrength"
+              class="w-100"
             />
             <button
               type="button"
@@ -103,6 +105,7 @@
               placeholder="Re-enter your new password"
               required
               minlength="8"
+              class="w-100"
             />
             <button
               type="button"
@@ -123,7 +126,7 @@
       </form>
 
       <!-- Cancel Link -->
-      <div class="mt-3 text-center">
+      <div class="mt-2 text-center">
         <router-link to="/account" class="text-muted small">
           Cancel
         </router-link>
@@ -251,39 +254,8 @@ function handleChangePassword() {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-h1 {
-  color: #1e3c72;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #495057;
-}
-
 .password-input-wrapper {
   position: relative;
-}
-
-input {
-  width: 100%;
-  padding: 0.6rem;
-  padding-right: 2.5rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-}
-
-input:focus {
-  outline: none;
-  border-color: #2a5298;
-  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
 }
 
 .password-toggle {
@@ -366,50 +338,6 @@ input:focus {
   margin-right: 0.5rem;
   font-size: 0.875rem;
 }
-
-button {
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-button:disabled {
-  background: #999;
-  cursor: not-allowed;
-}
-
-.btn-link {
-  color: #2a5298;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.btn-link:hover {
-  color: #1e3c72;
-}
-
-.error {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  color: #dc3545;
-  background: #f8d7da;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.success {
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  color: #155724;
-  background: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-radius: 5px;
-  text-align: center;
-}
-
 
 @media (max-width: 768px) {
   .change-password-card {
