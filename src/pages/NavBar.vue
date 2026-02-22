@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto ms-lg-4 ms-0">
             <li class="nav-item" v-for="(link, index) in navLinks" :key="index">
-              <a class="nav-link text-white" :href="link.url">{{ link.name }}</a>
+              <router-link :to="link.url" class="nav-link text-white">{{ link.name }}</router-link>
             </li>
             <li class="nav-item d-inline d-lg-none">
               <router-link to="/login" class="nav-link text-white">Log In</router-link>
