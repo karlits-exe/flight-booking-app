@@ -153,7 +153,7 @@
 
     	<div v-else>
     		<div v-if="flights.length" class="px-md-2">
-          <h1 class="h4 mb-0">Select
+          <h1 class="h4 mb-0 fw-bold">Select
             <span v-if="searchData.oneWay">one-way flight</span>
             <span v-else>round-trip flights</span>
           </h1>
@@ -214,17 +214,17 @@
 
     		<div v-else>
           <div v-if="isValidSearch">
-      			<h1 class="h4 mb-3">{{ searchData.from }} → {{ searchData.to }}</h1>
+      			<h1 class="h4 mb-3 fw-bold">{{ searchData.from }} → {{ searchData.to }}</h1>
 
       			<p>Sorry, no direct flights found for this route.</p>
           </div>
           <div v-else-if="searchData.to && !searchData.from">
-              <h1 class="h4 mb-3">Discover {{ searchData.to }} today</h1>
+              <h1 class="h4 mb-3 fw-bold">Discover {{ searchData.to }} today</h1>
             <p>Find direct flights to and from <strong>{{ searchData.to }}</strong> by using the search box above.
             </p>
           </div>
     			<div v-else>
-            <h1 class="h4 mb-3">Search affordable local flights</h1>
+            <h1 class="h4 mb-3 fw-bold">Search affordable local flights</h1>
             <p>Find flights today, and get packing soon.</p>
           </div>
     		</div>
