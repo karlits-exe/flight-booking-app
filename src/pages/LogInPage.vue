@@ -1,7 +1,7 @@
 <template>
   <div class="login-container px-4">
     <div class="login-card col-12 col-md-6">
-      <h1 class="h4 fw-bold">Log In</h1>
+      <h1 class="h4 fw-bold mb-4">Log In</h1>
 
       <form @submit.prevent="handleLogin">
       	<p v-if="error" class="error">{{ error }}</p>

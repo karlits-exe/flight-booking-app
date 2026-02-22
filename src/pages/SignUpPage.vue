@@ -1,7 +1,7 @@
 <template>
   <div class="register-container d-flex justify-content-center py-5 px-4">
     <div class="register-card col-12 col-md-6">
-      <h1 class="h4 fw-bold">Sign Up</h1>
+      <h1 class="h4 fw-bold mb-4">Sign Up</h1>
 
       <form @submit.prevent="handleRegister">
         <p v-if="error" class="error">{{ error }}</p>
