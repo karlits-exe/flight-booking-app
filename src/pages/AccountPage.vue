@@ -9,7 +9,7 @@
       </div> -->
 
       <!-- Profile Picture Section -->
-      <div class="text-center my-3">
+      <div class="text-center mt-0 mb-5">
         <div class="profile-picture-wrapper">
           <img 
             :src="userData.profilePicture || '/images/pilot2.jpg'" 
@@ -33,7 +33,7 @@
           />
         </div>
         <p class="fw-bold h5 mt-2 mb-2">{{ userData.firstName }} {{ userData.lastName }}</p>
-        <p class="h6 mb-5"><strong>Membership ID:</strong> {{ userData.membershipId }}</p>
+        <p class="h6"><strong>Membership ID:</strong> {{ userData.membershipId }}</p>
       </div>
 
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -217,7 +217,7 @@
 
       <!-- Additional Actions -->
       <div class="mt-4 pt-3 border-top">
-        <p class="small text-muted mb-2">Need help? <a href="#">Contact support</a> now.</p>
+        <p class="small text-muted mb-0">Need help? <a href="#">Contact support</a> now.</p>
       </div>
     </div>
   </div>
