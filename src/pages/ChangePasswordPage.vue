@@ -64,7 +64,7 @@
                 :style="{ width: strengthWidth }"
               ></div>
             </div>
-            <p class="strength-text small mt-1" :class="strengthClass">
+            <p class="strength-text small mt-1 text-white p-2 text-center" :class="strengthClass">
               {{ strengthText }}
             </p>
           </div>
@@ -72,11 +72,11 @@
 
         <!-- Password Requirements -->
         <div class="password-requirements mb-3">
-          <p class="small text-muted mb-2">Password must contain:</p>
+          <p class="small text-muted mb-2">Password must contain at least:</p>
           <ul class="small">
             <li :class="{ 'requirement-met': hasMinLength }">
               <i :class="hasMinLength ? 'bi bi-check-circle-fill text-success' : 'bi bi-circle'"></i>
-              At least 8 characters
+              Eight characters
             </li>
             <li :class="{ 'requirement-met': hasUpperCase }">
               <i :class="hasUpperCase ? 'bi bi-check-circle-fill text-success' : 'bi bi-circle'"></i>

@@ -34,6 +34,7 @@
         </div>
         <p class="fw-bold h5 mt-2 mb-2">{{ userData.firstName }} {{ userData.lastName }}</p>
         <p class="h6"><strong>Membership ID:</strong> {{ userData.membershipId }}</p>
+        <p class="h6"><strong>Member since:</strong> {{ userData.memberSince }}</p>
       </div>
 
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -165,17 +166,6 @@
             :disabled="!isEditing"
             required
             minlength="11"
-          />
-        </div>
-
-        <!-- Member Since (View Only) -->
-        <div class="form-group">
-          <label>Member Since</label>
-          <input
-            type="text"
-            :value="userData.memberSince"
-            disabled
-            class="disabled-field"
           />
         </div>
 
