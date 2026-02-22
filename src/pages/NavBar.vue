@@ -1,5 +1,5 @@
 <template>
-	<nav id="nav" class="navbar navbar-light navbar-expand-lg bg-primary px-4 sticky-top">
+	<nav id="nav" class="navbar navbar-light navbar-expand-lg bg-primary px-4 sticky-top shadow-sm">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold text-warning" href="/">WORLD CLASS</a>
 

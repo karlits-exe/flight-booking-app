@@ -1,5 +1,5 @@
 <template>
-  <div id="steps" class="bg-secondary text-white small" v-if="isValidSearch">
+  <div id="steps" class="bg-secondary text-white small" v-if="isValidSearch && flights.length">
     <div class="">
       <ol class="m-0 text-uppercase">
         <li class="nav-item p-2 current bg-light">
@@ -22,7 +22,11 @@
   </div>
   <div id="search-summary"
   v-if="isValidSearch"
-  class="bg-primary p-3 text-white text-center text-uppercase fw-bold">
+  :class="[
+    'p-3 text-center text-white text-uppercase fw-bold',
+    flights.length ? 'bg-primary' : 'bg-secondary'
+  ]"
+  >
   <span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
     &nbsp;
     <span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
