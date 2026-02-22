@@ -54,9 +54,6 @@
 </div>
 
 <div id="results" class="px-4">
-
-
- 
 	<div id="book" class="container position-relative mt-5" v-show="showBook">
       <div class="bg-light p-4 shadow-sm border">
       <form @submit.prevent="handleSearch">
@@ -176,7 +173,7 @@
             <span v-else>round-trip flights</span>
           </h1>
 
-          <hr style="height: 3px;" class="bg-dark border-0 my-5" />
+          <hr style="height: 3px;" class="bg-dark border-0 my-4" />
 
     			<h2 class="h4">1. {{ searchData.from }} → {{ searchData.to }}</h2>
     			<div class="row mt-4 mx-0" v-for="(flight, index) in flights" :key="index">
