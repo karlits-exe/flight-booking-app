@@ -11,7 +11,7 @@ const routes = [
   { path: "/login", component: LogIn, meta: { title: 'Log In | World Class' } },
   { path: "/signup", component: SignUp, meta: { title: 'Sign Up | World Class' } },
   { path: "/results", component: FlightsResults, meta: { title: 'Find Flights | World Class' } },
-  { path: "/account", component: AccountPage, meta: { title: 'Account | World Class' } },
+  { path: "/account", component: AccountPage, meta: { title: 'My Account | World Class' } },
   { path: "/change-password", component: ChangePassword, meta: { title: 'Change Password | World Class' } }
 ]
 
