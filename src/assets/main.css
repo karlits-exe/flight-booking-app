@@ -111,6 +111,47 @@ select {
 
 /********* RESULTS **********/
 
+#steps ol {
+    display: flex;
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+}
+
+#steps ol li {
+    counter-increment: step;
+    width: 20%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#steps ol li.current {
+    background-image:url(images/arrow-next.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    color: #000;
+}
+
+#steps ol li::before {
+    content: counter(step);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    background: #D2EA1F;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: #000;
+}
+
 #results {
   min-height: 60vh;
 }

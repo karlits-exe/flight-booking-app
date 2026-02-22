@@ -1,10 +1,28 @@
 <template>
-  <!--    <div id="steps" class="bg-white p-4">
-    Add steps later
-  </div> -->
+  <div id="steps" class="bg-secondary text-white small" v-if="isValidSearch">
+    <div class="">
+      <ol class="m-0">
+        <li class="nav-item p-2 current bg-light">
+            <span class="d-none d-md-inline">Flights</span>
+        </li>
+        <li class="nav-item p-2 bg-secondary">
+            <span class="d-none d-md-inline">Passengers</span>
+        </li>
+        <li class="nav-item p-2 bg-secondary">
+            <span class="d-none d-md-inline">Seats</span>
+        </li>
+        <li class="nav-item p-2 bg-secondary">
+            <span class="d-none d-md-inline">Add-ons</span>
+        </li>
+        <li class="nav-item p-2 bg-secondary">
+            <span class="d-none d-md-inline">Payment</span>
+        </li>
+      </ol>
+    </div>
+  </div>
   <div id="search-summary"
   v-if="isValidSearch"
-  class="bg-light p-3 text-dark text-center text-uppercase fw-bold">
+  class="bg-primary p-3 text-white text-center text-uppercase fw-bold">
   <span class="mb-md-0 mb-2 d-md-inline d-block">{{ getAirportCode(searchData.from) }}
     &nbsp;
     <span v-if="!searchData.oneWay"><i class="bi bi-arrow-repeat"></i></span>
@@ -32,7 +50,7 @@
     </span>
   </span>
 
-  <span><button class="btn btn-sm btn-outline-dark text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
+  <span><button class="btn btn-sm btn-outline-light text-uppercase fw-bold" @click="toggleBook">Edit Search</button></span>
 </div>
 
 <div id="results" class="px-4">
