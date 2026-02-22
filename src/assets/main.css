@@ -29,6 +29,7 @@ label,
 button,
 input[type="submit"] {
   font-weight: 600 !important;
+  text-transform: uppercase;
 }
 
 button {
