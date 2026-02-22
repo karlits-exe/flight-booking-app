@@ -3,14 +3,11 @@
     <div class="change-password-card col-12 col-md-8 col-lg-6">
       <!-- Header with Back Button -->
       <div class="d-flex align-items-center mb-4">
-        <button @click="goBack" class="btn btn-link text-decoration-none p-0 me-3">
-          <i class="bi bi-arrow-left"></i> Back
-        </button>
         <h1 class="h4 fw-bold mb-0">Change Password</h1>
       </div>
 
       <p class="text-muted mb-4">
-        Please enter your current password and choose a new password.
+        To set a new password, please enter your current one.
       </p>
 
       <form @submit.prevent="handleChangePassword">
@@ -127,8 +124,8 @@
 
       <!-- Cancel Link -->
       <div class="mt-3 text-center">
-        <router-link to="/my-details" class="text-muted small">
-          Cancel and return to My Details
+        <router-link to="/account" class="text-muted small">
+          Cancel
         </router-link>
       </div>
     </div>

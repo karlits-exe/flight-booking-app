@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto ms-lg-4 ms-0">
             <li class="nav-item" v-for="(link, index) in navLinks" :key="index">
-              <a class="nav-link text-white" href="#">{{ link }}</a>
+              <a class="nav-link text-white" :href="link.url">{{ link.name }}</a>
             </li>
             <li class="nav-item d-inline d-lg-none">
               <router-link to="/login" class="nav-link text-white">Log In</router-link>
@@ -38,6 +38,10 @@
 <script setup>
 import { ref } from "vue"
 
-const navLinks = ref(["Link", "Link", "Link", "Link"])
+const navLinks = ref([
+{ name: "Find Flights", url: "/results" },
+{ name: "My Account", url: "/account" },
+{ name: "Change Password", url: "/change-password" },
+])
 
 </script>

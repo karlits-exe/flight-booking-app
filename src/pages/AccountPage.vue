@@ -2,14 +2,14 @@
   <div class="mydetails-container d-flex justify-content-center py-5 px-4">
     <div class="mydetails-card col-12 col-md-8 col-lg-6">
       <!-- Header with Back Button -->
-      <div class="d-flex align-items-center mb-3">
+      <!-- <div class="d-flex align-items-center mb-3">
         <button @click="goBack" class="btn btn-link text-decoration-none p-0 me-3">
           <i class="bi bi-arrow-left"></i> Back
         </button>
-      </div>
+      </div> -->
 
       <!-- Profile Picture Section -->
-      <div class="text-center mb-4">
+      <div class="text-center my-3">
         <div class="profile-picture-wrapper">
           <img 
             :src="userData.profilePicture || '/images/pilot2.jpg'" 
@@ -32,11 +32,12 @@
             style="display: none"
           />
         </div>
-        <p class="text-muted small mt-2">{{ userData.firstName }} {{ userData.lastName }}</p>
+        <p class="fw-bold h5 mt-2 mb-2">{{ userData.firstName }} {{ userData.lastName }}</p>
+        <p class="h6 mb-5"><strong>Membership ID:</strong> {{ userData.membershipId }}</p>
       </div>
 
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h4 fw-bold mb-0">My Details</h1>
+        <h1 class="h4 fw-bold mb-0">My Account</h1>
         <button 
           v-if="!isEditing" 
           @click="toggleEdit" 
@@ -71,19 +72,6 @@
                 <option>Dr</option>
                 <option>Prof</option>
               </select>
-            </div>
-          </div>
-
-          <!-- Membership ID (View Only) -->
-          <div class="col-12 col-md-6">
-            <div class="form-group">
-              <label>Membership ID</label>
-              <input
-                type="text"
-                :value="userData.membershipId"
-                disabled
-                class="disabled-field"
-              />
             </div>
           </div>
         </div>
@@ -229,7 +217,7 @@
 
       <!-- Additional Actions -->
       <div class="mt-4 pt-3 border-top">
-        <p class="small text-muted mb-2">Need help? <a href="#">Contact Support</a></p>
+        <p class="small text-muted mb-2">Need help? <a href="#">Contact support</a> now.</p>
       </div>
     </div>
   </div>

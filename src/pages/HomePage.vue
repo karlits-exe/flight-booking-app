@@ -167,10 +167,6 @@ import { airports } from "../constants/airports.js"
 
 const router = useRouter()
 
-// NAVIGATION
-const navLinks = ref(["Link", "Link", "Link", "Link"])
-
-
 // BOOKING BOX
 const tabs = ref([
   "BOOK TRIP",
