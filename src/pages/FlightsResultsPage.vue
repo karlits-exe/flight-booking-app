@@ -1,7 +1,7 @@
 <template>
   <div id="steps" class="bg-secondary text-white small" v-if="isValidSearch">
     <div class="">
-      <ol class="m-0">
+      <ol class="m-0 text-uppercase">
         <li class="nav-item p-2 current bg-light">
             <span class="d-none d-md-inline fw-bold">Flights</span>
         </li>
