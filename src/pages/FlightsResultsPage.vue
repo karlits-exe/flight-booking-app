@@ -3,7 +3,7 @@
     <div class="">
       <ol class="m-0">
         <li class="nav-item p-2 current bg-light">
-            <span class="d-none d-md-inline">Flights</span>
+            <span class="d-none d-md-inline fw-bold">Flights</span>
         </li>
         <li class="nav-item p-2 bg-secondary">
             <span class="d-none d-md-inline">Passengers</span>
