@@ -24,7 +24,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary w-100" :disabled="loading">
-          {{ loading ? "Logging in..." : "Login" }}
+          {{ loading ? "Logging in..." : "Enter" }}
         </button>
       </form>
 
