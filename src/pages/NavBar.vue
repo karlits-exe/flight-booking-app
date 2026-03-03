@@ -42,6 +42,7 @@ const navLinks = ref([
 { name: "Find Flights", url: "/results" },
 { name: "My Account", url: "/account" },
 { name: "Change Password", url: "/change-password" },
+{ name: "Help & Contact", url: "/help" },
 ])
 
 </script>
